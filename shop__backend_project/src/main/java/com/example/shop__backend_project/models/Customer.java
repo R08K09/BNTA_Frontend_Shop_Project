@@ -1,12 +1,23 @@
 package com.example.shop__backend_project.models;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
+@Entity
+@Table(name = "customers")
 public class Customer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    @Column
     private String name;
+    @Column
     private String email;
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties({"customer"})
     private ArrayList<Product>products;
 
     public Customer(String name, String email){

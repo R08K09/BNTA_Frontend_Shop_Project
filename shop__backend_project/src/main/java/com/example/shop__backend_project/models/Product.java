@@ -1,18 +1,34 @@
 package com.example.shop__backend_project.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "products")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    @Column
     private String name;
+    @Column
     private int price;
+    @Column
     private String colour;
+    @Column
     private String category;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
     public Product(String name, String colour, String category, int price){
         this.name = name;
         this.colour = colour;
         this.category = category;
         this.price = price;
+        this.customer = null; //Nullable until product is assigned
 
     }
     public Product(){
