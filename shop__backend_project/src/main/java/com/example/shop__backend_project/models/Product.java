@@ -2,6 +2,9 @@ package com.example.shop__backend_project.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -34,6 +37,13 @@ public class Product {
     public Product(){
 
     }
+//    public void addCustomer(Customer customer) {
+//        this.customer;
+//    }
+
+
+    //getters and setters
+
 
     public Long getId() {
         return id;
@@ -73,5 +83,13 @@ public class Product {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

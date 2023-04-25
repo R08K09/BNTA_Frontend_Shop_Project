@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "customers")
 public class Customer {
@@ -18,7 +20,7 @@ public class Customer {
     private String email;
     @OneToMany(mappedBy = "customer")
     @JsonIgnoreProperties({"customer"})
-    private ArrayList<Product>products;
+    private List<Product> products;
 
     public Customer(String name, String email){
         this.name =name;
@@ -53,11 +55,11 @@ public class Customer {
         this.email = email;
     }
 
-    public ArrayList<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(ArrayList<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 }

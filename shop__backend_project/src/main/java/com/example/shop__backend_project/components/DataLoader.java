@@ -18,20 +18,31 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader(){}
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Product boat = new Product("Fair Seas", "Blue and white", "Boat", 5000000);
-        productRepository.save(boat);
-        Product car = new Product("Fancy car", "Gold", "Car", 10000000);
-        productRepository.save(car);
+        Product fairSeas = new Product("Fair Seas", "Blue and white", "Boat", 5000000);
+        productRepository.save(fairSeas);
+        Product fancyCar = new Product("Fancy car", "Gold", "Car", 10000000);
+        productRepository.save(fancyCar);
+        Product concord = new Product("Concord","White","Plane",1000000000);
+        productRepository.save(concord);
 
-//        Customer fiona = new Customer("Fiona", "fiona@bnta.com");
-//        customerRepository.save(fiona);
-//        Customer theo = new Customer("Theo", "Theo@bnta.com");
-//        customerRepository.save(theo);
-//        Customer subrina = new Customer("Subrina", "subrina@bnta.com");
-//        customerRepository.save(subrina);
-//        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
-//        customerRepository.save(kelly);
+        Customer fiona = new Customer("Fiona", "fiona@bnta.com");
+        customerRepository.save(fiona);
+        Customer theo = new Customer("Theo", "Theo@bnta.com");
+        customerRepository.save(theo);
+        Customer subrina = new Customer("Subrina", "subrina@bnta.com");
+        customerRepository.save(subrina);
+        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
+        customerRepository.save(kelly);
 
+        fairSeas.setCustomer(fiona);
+        fancyCar.setCustomer(theo);
+        concord.setCustomer(subrina);
 
+        productRepository.save(fairSeas);
+        productRepository.save(fancyCar);
+        productRepository.save(concord);
+
+//productRepository.save(boat);
+//productRepository.save(car);
     }
 }
