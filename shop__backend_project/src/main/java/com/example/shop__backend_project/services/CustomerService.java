@@ -18,6 +18,11 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
+
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
+    }
+
     public Customer addNewCustomer(Customer customer) {
         return customerRepository.save(customer);
     }

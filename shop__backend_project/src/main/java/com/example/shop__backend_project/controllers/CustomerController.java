@@ -6,6 +6,8 @@ import com.example.shop__backend_project.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,19 @@ public class CustomerController {
 
     @Autowired
     CustomerService customerService;
+
+//    DELETE customer by id
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteCustomer(@PathVariable Long id){
+        customerService.deleteCustomer(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+
+//    Add new customer
+    @PostMapping
+    public ResponseEntity<Customer> addNewCustomer (@RequestBody Customer customer) {
+        Customer newCustomer = customerService.addNewCustomer(customer);
+        return new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
 
 //    Add new customer
     @PostMapping
@@ -36,4 +51,11 @@ public class CustomerController {
 
     }
 
+        @Autowired
+        CustomerRepository customerRepository;
+
+        @GetMapping
+        public ResponseEntity<List<Customer>> getAllCustomers () {
+            return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
+        }
 }
