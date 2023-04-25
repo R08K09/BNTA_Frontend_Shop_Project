@@ -30,6 +30,8 @@ public class CustomerController {
 
     @Autowired
     CustomerService customerService;
+    @Autowired
+    CustomerRepository customerRepository;
 
     @Autowired
     CustomerRepository customerRepository;
@@ -54,6 +56,10 @@ public class CustomerController {
         Customer newCustomer = customerService.addNewCustomer(customer);
         return new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
 
     @GetMapping
     public ResponseEntity<List<Customer>> getAllCustomers(){
