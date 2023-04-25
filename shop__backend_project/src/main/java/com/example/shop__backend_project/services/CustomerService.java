@@ -18,10 +18,20 @@ public class CustomerService {
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
+
     public Customer updateCustomer(Customer customer, Long id) {
         Customer updatedCustomer = customerRepository.findById(id).get();
         updatedCustomer.setName(customer.getName());
         updatedCustomer.setEmail(customer.getEmail());
+
+
+
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
+    }
+
+    public Customer addNewCustomer(Customer customer) {
+
         return customerRepository.save(customer);
     }
 }
