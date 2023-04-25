@@ -23,7 +23,7 @@ public class CustomerService {
         Customer updatedCustomer = customerRepository.findById(id).get();
         updatedCustomer.setName(customer.getName());
         updatedCustomer.setEmail(customer.getEmail());
-
+    }
 
 
     public void deleteCustomer(Long id) {

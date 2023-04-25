@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-=======
 import com.example.shop__backend_project.repositories.CustomerRepository;
 import com.example.shop__backend_project.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +30,8 @@ public class CustomerController {
 
     @Autowired
     CustomerService customerService;
+    @Autowired
+    CustomerRepository customerRepository;
 
 
     @PutMapping(value = "/{id}")
@@ -51,28 +52,13 @@ public class CustomerController {
     public ResponseEntity<Customer> addNewCustomer (@RequestBody Customer customer) {
         Customer newCustomer = customerService.addNewCustomer(customer);
         return new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
+    }
 
-//    Add new customer
-    @PostMapping
-    public ResponseEntity<Customer> addNewCustomer (@RequestBody Customer customer){
-        Customer newCustomer = customerService.addNewCustomer(customer);
-        return  new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
-}
-    @Autowired
-    CustomerRepository customerRepository;
 
     @GetMapping
     public ResponseEntity<List<Customer>> getAllCustomers(){
         return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
 
     }
-
-        @Autowired
-        CustomerRepository customerRepository;
-
-        @GetMapping
-        public ResponseEntity<List<Customer>> getAllCustomers () {
-            return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
-        }
 
 }
