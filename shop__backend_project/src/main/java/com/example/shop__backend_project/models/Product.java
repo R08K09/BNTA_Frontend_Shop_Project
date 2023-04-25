@@ -1,5 +1,6 @@
 package com.example.shop__backend_project.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
+    @JsonIgnoreProperties({"products"})
     private Customer customer;
 
     public Product(String name, String colour, String category, int price){

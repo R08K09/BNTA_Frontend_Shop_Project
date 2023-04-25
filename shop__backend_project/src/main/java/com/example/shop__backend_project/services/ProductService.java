@@ -29,4 +29,13 @@ public class ProductService {
     public List<Product> findAllProductsByColour(String colour) {
         return productRepository.findByColour(colour);
     }
+
+    public Product updateProduct(Product product, Long id) {
+//        find the product to update by id
+        Product productToUpdate = productRepository.findById(id).get();
+//        Option to change product information
+        productToUpdate.setName(product.getName());
+        productToUpdate.setCategory(product.getCategory());
+        return productRepository.save(product);
+    }
 }
