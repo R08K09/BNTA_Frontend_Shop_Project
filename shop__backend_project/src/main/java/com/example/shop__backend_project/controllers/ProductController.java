@@ -17,6 +17,7 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+
 //    Display all product details
 //    @GetMapping
 //    public ResponseEntity<List<Product>> getAllProducts(){
@@ -52,7 +53,18 @@ public class ProductController {
         Product updatedProduct = productService.updateProduct(product, id);
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
 
+    }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteProduct(@PathVariable Long id){
+        productService.deleteProduct(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<List<Product>> postProduct(@RequestBody Product product){
+        productService.save(product);
+        return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.CREATED);
     }
 
 }
