@@ -6,6 +6,7 @@ import com.example.shop__backend_project.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,12 +19,19 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
+    public Customer updateCustomer(Customer customer, Long id) {
+        Customer updatedCustomer = customerRepository.findById(id).get();
+        updatedCustomer.setName(customer.getName());
+        updatedCustomer.setEmail(customer.getEmail());
+
+
 
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
     }
 
     public Customer addNewCustomer(Customer customer) {
+
         return customerRepository.save(customer);
     }
 }
