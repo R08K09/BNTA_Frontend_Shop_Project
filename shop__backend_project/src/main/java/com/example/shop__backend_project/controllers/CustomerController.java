@@ -33,6 +33,9 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
+    @Autowired
+    CustomerRepository customerRepository;
+
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<Customer> updatedCustomer(@RequestBody Customer customer, @PathVariable Long id){
@@ -53,7 +56,10 @@ public class CustomerController {
         Customer newCustomer = customerService.addNewCustomer(customer);
         return new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 
     @GetMapping
     public ResponseEntity<List<Customer>> getAllCustomers(){

@@ -23,15 +23,23 @@ public class CustomerService {
         Customer updatedCustomer = customerRepository.findById(id).get();
         updatedCustomer.setName(customer.getName());
         updatedCustomer.setEmail(customer.getEmail());
+<<<<<<< HEAD
     }
 
 
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
+=======
+        return customerRepository.save(updatedCustomer);
+>>>>>>> main
     }
 
-    public Customer addNewCustomer(Customer customer) {
 
-        return customerRepository.save(customer);
-    }
+        public void deleteCustomer (Long id){
+            customerRepository.deleteById(id);
+        }
+
+        public Customer addNewCustomer (Customer customer){
+            return customerRepository.save(customer);
+        }
 }
