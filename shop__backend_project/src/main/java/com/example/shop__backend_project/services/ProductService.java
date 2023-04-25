@@ -36,6 +36,8 @@ public class ProductService {
 //        Option to change product information
         productToUpdate.setName(product.getName());
         productToUpdate.setCategory(product.getCategory());
+        productToUpdate.setColour(product.getColour());
+        productToUpdate.setPrice(product.getPrice());
         return productRepository.save(product);
     }
     public void deleteProduct(Long id){
