@@ -38,4 +38,12 @@ public class ProductService {
         productToUpdate.setCategory(product.getCategory());
         return productRepository.save(product);
     }
+    public void deleteProduct(Long id){
+        productRepository.deleteById(id);
+    }
+
+    public  Product save(Product product) {
+        productRepository.save(product);
+        return product;
+    }
 }
