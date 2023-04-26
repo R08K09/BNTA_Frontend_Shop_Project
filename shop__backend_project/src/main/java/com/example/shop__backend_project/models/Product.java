@@ -1,5 +1,6 @@
 package com.example.shop__backend_project.models;
 
+import com.example.shop__backend_project.enums.DiscountEnum;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 

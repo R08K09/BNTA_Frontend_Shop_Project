@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "customers")
 public class Customer {
 
+    // Customers have an ID, name, email address and a list of products
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
