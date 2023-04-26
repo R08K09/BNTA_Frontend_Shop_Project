@@ -15,6 +15,9 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
+    @Autowired
+    ProductService productService;
+
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
@@ -32,4 +35,15 @@ public class CustomerService {
         public Customer addNewCustomer (Customer customer){
             return customerRepository.save(customer);
         }
+
+    public Customer addProductToCustomer(long customerId, long productId) {
+        Customer customer = customerRepository.findById(customerId).get();
+        Product product = productService.findProductById(productId);
+        List<Product>products = customer.getProducts();
+        products.add(product);
+        customer.setProducts(products);
+//        productService.isProductSold
+        customerRepository.save(customer);
+        return customer;
+    }
 }

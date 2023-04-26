@@ -2,7 +2,9 @@ package com.example.shop__backend_project.controllers;
 
 import com.example.shop__backend_project.models.Customer;
 
+import com.example.shop__backend_project.models.Product;
 import com.example.shop__backend_project.services.CustomerService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -57,6 +59,12 @@ public class CustomerController {
     public ResponseEntity<List<Customer>> getAllCustomers(){
         return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
 
+    }
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<Customer> addProductToCustomer(@PathVariable long id, @RequestBody Product product){
+    long productId = product.getId();
+    Customer customerWithProduct = customerService.addProductToCustomer(id, productId);
+    return new ResponseEntity<>(customerWithProduct,HttpStatus.OK);
     }
 
 }

@@ -18,11 +18,11 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader(){}
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Product fairSeas = new Product("Fair Seas", "Blue and white", "Boat", 5000000);
+        Product fairSeas = new Product("Fair Seas", "Blue and white", "Boat", 5000000, false);
         productRepository.save(fairSeas);
-        Product fancyCar = new Product("Fancy car", "Gold", "Car", 10000000);
+        Product fancyCar = new Product("Fancy car", "Gold", "Car", 10000000, false);
         productRepository.save(fancyCar);
-        Product concord = new Product("Concord","White","Plane",1000000000);
+        Product concord = new Product("Concord","White","Plane",1000000000, false);
         productRepository.save(concord);
 
         Customer fiona = new Customer("Fiona", "fiona@bnta.com");
