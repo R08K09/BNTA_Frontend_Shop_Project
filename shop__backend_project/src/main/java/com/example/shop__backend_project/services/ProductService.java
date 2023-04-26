@@ -1,5 +1,6 @@
 package com.example.shop__backend_project.services;
 
+import com.example.shop__backend_project.enums.DiscountEnum;
 import com.example.shop__backend_project.models.Product;
 import com.example.shop__backend_project.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
+
     public Product findProductById(Long id) {
         return productRepository.findById(id).get();
     }
@@ -40,24 +42,35 @@ public class ProductService {
         productToUpdate.setPrice(product.getPrice());
         return productRepository.save(product);
     }
-    public void deleteProduct(Long id){
+
+    public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
 
     public Product isProductSold(Product product, Long id) {
         Product soldUpdate = productRepository.findById(id).get();
-        if(soldUpdate.getCustomer() == null){
+        if (soldUpdate.getCustomer() == null) {
             soldUpdate.setSold(false);
-        }
-        else if(soldUpdate.getCustomer() != null){
+        } else if (soldUpdate.getCustomer() != null) {
             soldUpdate.setSold(true);
         }
         return productRepository.save(soldUpdate);
     }
 
-    public  Product save(Product product) {
+    public Product save(Product product) {
         productRepository.save(product);
         return product;
     }
 
+    public int getFinalPrice(DiscountEnum discount, Long id) {
+        // if discount = null, return the original price
+        // get the price from the product
+        Product productByDiscount = productRepository.findById(id).get();
+        if (discount == null) {
+            return productByDiscount.getPrice();
+        } else {
+            int moneyOff = (productByDiscount.getPrice() * (discount.getDiscount()) / 100);
+            return productByDiscount.getPrice() - moneyOff;
+        }
+    }
 }
