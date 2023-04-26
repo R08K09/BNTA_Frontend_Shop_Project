@@ -1,5 +1,6 @@
 package com.example.shop__backend_project.models;
 
+import com.example.shop__backend_project.enums.DiscountEnum;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -27,8 +28,16 @@ public class Order {
     @JsonIgnoreProperties({"orders"})
     private Product product;
 
-    public Order(LocalDate dateOfPurchase){
+    @Column
+    private DiscountEnum discount;
+
+    @Column
+    private int orderTotal;
+
+    public Order(LocalDate dateOfPurchase, DiscountEnum discount, int orderTotal){
         this.dateOfPurchase = dateOfPurchase;
+        this.discount = discount;
+        this.orderTotal = orderTotal;
     }
     public Order(){
 
@@ -64,5 +73,21 @@ public class Order {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public DiscountEnum getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(DiscountEnum discount) {
+        this.discount = discount;
+    }
+
+    public int getOrderTotal() {
+        return orderTotal;
+    }
+
+    public void setOrderTotal(int orderTotal) {
+        this.orderTotal = orderTotal;
     }
 }
