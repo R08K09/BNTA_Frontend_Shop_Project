@@ -44,8 +44,20 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    public Product isProductSold(Product product, Long id) {
+        Product soldUpdate = productRepository.findById(id).get();
+        if(soldUpdate.getCustomer() == null){
+            soldUpdate.setSold(false);
+        }
+        else if(soldUpdate.getCustomer() != null){
+            soldUpdate.setSold(true);
+        }
+        return productRepository.save(soldUpdate);
+    }
+
     public  Product save(Product product) {
         productRepository.save(product);
         return product;
     }
+
 }

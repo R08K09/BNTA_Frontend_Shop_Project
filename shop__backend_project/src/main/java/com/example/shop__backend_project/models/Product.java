@@ -23,17 +23,21 @@ public class Product {
     @Column
     private String category;
 
+    @Column
+    private boolean isSold;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     @JsonIgnoreProperties({"products"})
     private Customer customer;
 
-    public Product(String name, String colour, String category, int price){
+    public Product(String name, String colour, String category, int price, boolean isSold){
         this.name = name;
         this.colour = colour;
         this.category = category;
         this.price = price;
         this.customer = null; //Nullable until product is assigned
+        this.isSold = isSold;
 
     }
     public Product(){
@@ -93,5 +97,13 @@ public class Product {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public boolean isSold() {
+        return isSold;
+    }
+
+    public void setSold(boolean sold) {
+        isSold = sold;
     }
 }
