@@ -33,14 +33,10 @@ public class OrderController {
     }
 
     @PostMapping()
-    public ResponseEntity<Customer> addProductToCustomer
-            (@RequestParam Long productId, @RequestParam Long customerId, @RequestBody OrderDTO orderDTO){
-//    long productId = product.getId();
-        Customer customerWithProduct = customerService.addProductToCustomer(customerId, productId);
-        Product productSold = productService.findProductById(productId);
-        productSold.setCustomer(customerWithProduct);
-        productService.isProductSold(productSold, productId);
-//        orderService.saveOrder(orderDTO);
-        return new ResponseEntity<>(customerWithProduct, HttpStatus.OK);
+    public ResponseEntity<List<Order>> addProductToCustomer(@RequestBody OrderDTO orderDTO){
+
+//        productService.isProductSold(productSold, productId);
+        orderService.saveOrder(orderDTO);
+        return new ResponseEntity<>(orderService.findAll(), HttpStatus.OK);
     }
 }

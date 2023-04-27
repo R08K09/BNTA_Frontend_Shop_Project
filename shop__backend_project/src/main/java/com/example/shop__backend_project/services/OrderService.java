@@ -39,26 +39,24 @@ public class OrderService {
         //getFinalPrice
     //then set orderTotal as getFinalPrice
 
-//    public int getFinalPrice(Customer customer) {
-//        // if discount = null, return the original price
-//        // get the price from the product
-//        Product productByDiscount = productRepository.findById(id).get();
-//        if (discount == null) {
-//            return productByDiscount.getPrice();
-//        } else {
-//            int moneyOff = (productByDiscount.getPrice() * (discount.getDiscount()) / 100);
-//            return productByDiscount.getPrice() - moneyOff;
-//        }
-//    }
-//
-//    public List<Order>findAll() {
-//        return orderRepository.findAll();
-//    }
-//    public void saveOrder(OrderDTO orderDTO){
-//        Customer customer = customerService.getCustomer(orderDTO.getCustomerId());
-//        Product product = productService.getProduct(orderDTO.getProductId());
-//        int orderTotal = getFinalPrice(customer);
-//        Order order = new Order(customer, product, orderTotal, orderDTO.getDateOfPurchase());
-//    }
+    public int getFinalPrice(Customer customer, Product product) {
+        int discount = customer.getDiscountCategory().getDiscount();
+        int productPrice = product.getPrice();
+        int orderTotal = productPrice - (productPrice * (discount/100));
+        return orderTotal;
+    }
+
+    public List<Order>findAll() {
+        return orderRepository.findAll();
+    }
+
+
+    public void saveOrder(OrderDTO orderDTO){
+        Customer customer = customerService.findCustomerById(orderDTO.getCustomerId());
+        Product product = productService.findProductById(orderDTO.getProductId());
+        int orderTotal = getFinalPrice(customer, product);
+        Order order = new Order(product, customer, orderDTO.getDateOfPurchase(), orderTotal);
+        orderRepository.save(order);
+    }
 
 }

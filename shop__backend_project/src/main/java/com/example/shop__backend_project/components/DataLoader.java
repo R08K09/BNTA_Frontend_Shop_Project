@@ -33,8 +33,8 @@ public class DataLoader implements ApplicationRunner {
         Product concord = new Product("Concord","White","Plane",1000000000, false);
         productRepository.save(concord);
 //
-//        Customer fiona = new Customer("Fiona", "fiona@bnta.com");
-//        customerRepository.save(fiona);
+        Customer fiona = new Customer("Fiona", "fiona@bnta.com", DiscountEnum.STUDENT);
+        customerRepository.save(fiona);
 //        Customer theo = new Customer("Theo", "Theo@bnta.com");
 //        customerRepository.save(theo);
 //        Customer subrina = new Customer("Subrina", "subrina@bnta.com");
@@ -42,7 +42,7 @@ public class DataLoader implements ApplicationRunner {
 //        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
 //        customerRepository.save(kelly);
 //
-//        fairSeas.setCustomer(fiona);
+        concord.setCustomer(fiona);
 //        fancyCar.setCustomer(theo);
 //        concord.setCustomer(subrina);
 
@@ -50,10 +50,7 @@ public class DataLoader implements ApplicationRunner {
         productRepository.save(fancyCar);
         productRepository.save(concord);
 
-        //Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
-
-
-
+        Order order1 = new Order(concord, fiona,LocalDate.of(2023,04,26), 10000);
         orderRepository.save(order1);
     }
 }

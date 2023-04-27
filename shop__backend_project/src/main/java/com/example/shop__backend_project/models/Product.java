@@ -32,6 +32,8 @@ public class Product {
     @JsonIgnoreProperties({"products"})
     private Customer customer;
 
+//    @OneToOne
+//    private Order order;
     public Product(String name, String colour, String category, int price, boolean isSold){
         this.name = name;
         this.colour = colour;
