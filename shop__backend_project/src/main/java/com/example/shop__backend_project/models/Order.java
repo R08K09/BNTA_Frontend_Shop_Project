@@ -30,12 +30,22 @@ public class Order {
 
 
     @Column
+    private DiscountEnum discount;
+
+
+    @Column
     private int orderTotal;
+
 
     public Order(Product product, Customer customer, LocalDate dateOfPurchase, int orderTotal){
         this.product = product;
         this.customer = customer;
         this.dateOfPurchase = dateOfPurchase;
+
+    public Order(LocalDate dateOfPurchase, DiscountEnum discount, int orderTotal){
+        this.dateOfPurchase = dateOfPurchase;
+        this.discount = discount;
+
         this.orderTotal = orderTotal;
     }
     public Order(){
@@ -72,6 +82,15 @@ public class Order {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+
+    public DiscountEnum getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(DiscountEnum discount) {
+        this.discount = discount;
     }
 
     public int getOrderTotal() {
