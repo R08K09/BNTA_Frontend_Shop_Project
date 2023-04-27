@@ -26,31 +26,38 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader(){}
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Product fairSeas = new Product("Fair Seas", "Blue and white", "Boat", 5000000, false);
+        Product fairSeas = new Product("Fair Seas", "Blue and white", "Boat", 5000000, true);
         productRepository.save(fairSeas);
-        Product fancyCar = new Product("Fancy car", "Gold", "Car", 10000000, false);
+        Product fancyCar = new Product("Fancy car", "Gold", "Car", 10000000, true);
         productRepository.save(fancyCar);
         Product concord = new Product("Concord","White","Plane",1000000000, false);
         productRepository.save(concord);
-
-        Customer fiona = new Customer("Fiona", "fiona@bnta.com");
-        customerRepository.save(fiona);
-        Customer theo = new Customer("Theo", "Theo@bnta.com");
-        customerRepository.save(theo);
-        Customer subrina = new Customer("Subrina", "subrina@bnta.com");
-        customerRepository.save(subrina);
-        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
-        customerRepository.save(kelly);
-
-        fairSeas.setCustomer(fiona);
-        fancyCar.setCustomer(theo);
-        concord.setCustomer(subrina);
+//
+//        Customer fiona = new Customer("Fiona", "fiona@bnta.com");
+//        customerRepository.save(fiona);
+//        Customer theo = new Customer("Theo", "Theo@bnta.com");
+//        customerRepository.save(theo);
+//        Customer subrina = new Customer("Subrina", "subrina@bnta.com");
+//        customerRepository.save(subrina);
+//        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
+//        customerRepository.save(kelly);
+//
+//        fairSeas.setCustomer(fiona);
+//        fancyCar.setCustomer(theo);
+//        concord.setCustomer(subrina);
 
         productRepository.save(fairSeas);
         productRepository.save(fancyCar);
         productRepository.save(concord);
 
+
+        //Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
+
+
+
+
         Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
+
         orderRepository.save(order1);
     }
 }
