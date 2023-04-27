@@ -65,6 +65,16 @@ public class ProductService {
         return product;
     }
 
-
+    public int getFinalPrice(DiscountEnum discount, Long id) {
+        // if discount = null, return the original price
+        // get the price from the product
+        Product productByDiscount = productRepository.findById(id).get();
+        if (discount == null) {
+            return productByDiscount.getPrice();
+        } else {
+            int moneyOff = (productByDiscount.getPrice() * (discount.getDiscount()) / 100);
+            return productByDiscount.getPrice() - moneyOff;
+        }
+    }
 
 }

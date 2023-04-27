@@ -50,9 +50,13 @@ public class DataLoader implements ApplicationRunner {
         productRepository.save(fancyCar);
         productRepository.save(concord);
 
+
         //Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
 
 
+
+
+        Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
 
         orderRepository.save(order1);
     }
