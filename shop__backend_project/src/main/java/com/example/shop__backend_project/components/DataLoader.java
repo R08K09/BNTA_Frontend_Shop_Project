@@ -44,11 +44,11 @@ public class DataLoader implements ApplicationRunner {
 
         fairSeas.setCustomer(fiona);
         fancyCar.setCustomer(theo);
-//        concord.setCustomer(subrina);
+        concord.setCustomer(subrina);
 
         productRepository.save(fairSeas);
         productRepository.save(fancyCar);
-//      productRepository.save(concord);
+        productRepository.save(concord);
 
         Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
 
