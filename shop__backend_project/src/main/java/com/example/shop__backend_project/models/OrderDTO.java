@@ -10,15 +10,13 @@ public class OrderDTO {
     private int orderTotal;
 
     private LocalDate dateOfPurchase;
-    private DiscountEnum discountEnum;
 
 
-    public OrderDTO(long productId, long customerId, int orderTotal, LocalDate dateOfPurchase, DiscountEnum discountEnum){
+    public OrderDTO(long productId, long customerId, LocalDate dateOfPurchase, int orderTotal){
         this.productId = productId;
         this.customerId = customerId;
         this.orderTotal = orderTotal;
         this.dateOfPurchase = dateOfPurchase;
-        this.discountEnum = discountEnum;
     }
     public OrderDTO(){
 
@@ -54,13 +52,5 @@ public class OrderDTO {
 
     public void setDateOfPurchase(LocalDate dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
-    }
-
-    public DiscountEnum getDiscountEnum() {
-        return discountEnum;
-    }
-
-    public void setDiscountEnum(DiscountEnum discountEnum) {
-        this.discountEnum = discountEnum;
     }
 }

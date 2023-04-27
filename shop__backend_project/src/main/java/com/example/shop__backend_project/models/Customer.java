@@ -1,5 +1,6 @@
 package com.example.shop__backend_project.models;
 
+import com.example.shop__backend_project.enums.DiscountEnum;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -19,13 +20,17 @@ public class Customer {
     private String name;
     @Column
     private String email;
+
+    @Column
+    private DiscountEnum discountCategory;
     @OneToMany(mappedBy = "customer")
     @JsonIgnoreProperties({"customer"})
     private List<Product> products;
 
-    public Customer(String name, String email){
+    public Customer(String name, String email, DiscountEnum discountCategory){
         this.name =name;
         this.email = email;
+        this.discountCategory = discountCategory;
         this.products = new ArrayList<>();
     }
     public Customer(){
@@ -62,5 +67,13 @@ public class Customer {
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    public DiscountEnum getDiscountCategory() {
+        return discountCategory;
+    }
+
+    public void setDiscountCategory(DiscountEnum discountCategory) {
+        this.discountCategory = discountCategory;
     }
 }

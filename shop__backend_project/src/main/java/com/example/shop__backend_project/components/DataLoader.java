@@ -32,25 +32,25 @@ public class DataLoader implements ApplicationRunner {
         productRepository.save(fancyCar);
         Product concord = new Product("Concord","White","Plane",1000000000, false);
         productRepository.save(concord);
-
-        Customer fiona = new Customer("Fiona", "fiona@bnta.com");
-        customerRepository.save(fiona);
-        Customer theo = new Customer("Theo", "Theo@bnta.com");
-        customerRepository.save(theo);
-        Customer subrina = new Customer("Subrina", "subrina@bnta.com");
-        customerRepository.save(subrina);
-        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
-        customerRepository.save(kelly);
-
-        fairSeas.setCustomer(fiona);
-        fancyCar.setCustomer(theo);
-        concord.setCustomer(subrina);
+//
+//        Customer fiona = new Customer("Fiona", "fiona@bnta.com");
+//        customerRepository.save(fiona);
+//        Customer theo = new Customer("Theo", "Theo@bnta.com");
+//        customerRepository.save(theo);
+//        Customer subrina = new Customer("Subrina", "subrina@bnta.com");
+//        customerRepository.save(subrina);
+//        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
+//        customerRepository.save(kelly);
+//
+//        fairSeas.setCustomer(fiona);
+//        fancyCar.setCustomer(theo);
+//        concord.setCustomer(subrina);
 
         productRepository.save(fairSeas);
         productRepository.save(fancyCar);
         productRepository.save(concord);
 
-        Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
+        //Order order1 = new Order(LocalDate.of(2023,04,26), DiscountEnum.STUDENT, 10000);
 
 
 

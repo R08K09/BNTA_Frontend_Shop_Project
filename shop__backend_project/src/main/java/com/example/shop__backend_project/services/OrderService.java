@@ -25,6 +25,12 @@ public class OrderService {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    CustomerService customerService;
+
+    @Autowired
+    ProductService productService;
+
 //    public Order executeOrder(Long customerId, Long productId){
 //        Customer targetCustomer = customerRepository.findById(customerId).get();
 //        Product targetOrder = productRepository.findById(productId).get();
@@ -33,24 +39,26 @@ public class OrderService {
         //getFinalPrice
     //then set orderTotal as getFinalPrice
 
-    public int getFinalPrice(DiscountEnum discount, Long id) {
-        // if discount = null, return the original price
-        // get the price from the product
-        Product productByDiscount = productRepository.findById(id).get();
-        if (discount == null) {
-            return productByDiscount.getPrice();
-        } else {
-            int moneyOff = (productByDiscount.getPrice() * (discount.getDiscount()) / 100);
-            return productByDiscount.getPrice() - moneyOff;
-        }
-    }
-
-    public List<Order>findAll() {
-        return orderRepository.findAll();
-    }
+//    public int getFinalPrice(Customer customer) {
+//        // if discount = null, return the original price
+//        // get the price from the product
+//        Product productByDiscount = productRepository.findById(id).get();
+//        if (discount == null) {
+//            return productByDiscount.getPrice();
+//        } else {
+//            int moneyOff = (productByDiscount.getPrice() * (discount.getDiscount()) / 100);
+//            return productByDiscount.getPrice() - moneyOff;
+//        }
+//    }
+//
+//    public List<Order>findAll() {
+//        return orderRepository.findAll();
+//    }
 //    public void saveOrder(OrderDTO orderDTO){
-//        Order order = new Order(orderDTO.getCustomerId(), orderDTO.getProductId(),
-//                orderDTO.getOrderTotal(), orderDTO.getDateOfPurchase(),orderDTO.getDiscountEnum());
+//        Customer customer = customerService.getCustomer(orderDTO.getCustomerId());
+//        Product product = productService.getProduct(orderDTO.getProductId());
+//        int orderTotal = getFinalPrice(customer);
+//        Order order = new Order(customer, product, orderTotal, orderDTO.getDateOfPurchase());
 //    }
 
 }
