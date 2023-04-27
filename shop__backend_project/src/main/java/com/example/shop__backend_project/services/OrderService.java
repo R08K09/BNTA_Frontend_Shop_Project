@@ -49,6 +49,8 @@ public class OrderService {
         return orderRepository.findAll();
     }
 //    public void saveOrder(OrderDTO orderDTO){
-//        Order order = new Order(orderDTO.getCustomerId(), orderDTO.getProductId(),orderDTO.getOrderTotal(), orderDTO.getDateOfPurchase(),orderDTO.getDiscountEnum());
+//        Order order = new Order(orderDTO.getCustomerId(), orderDTO.getProductId(),
+//                orderDTO.getOrderTotal(), orderDTO.getDateOfPurchase(),orderDTO.getDiscountEnum());
 //    }
+
 }
