@@ -22,11 +22,24 @@
 * Web
 * PostgreSQL
 * JPA
-* Software used:
+
+## Software used:
 * IntelliJ
 * Postman
 * Postico
 * PostgreSQL
+
+## iInstallation guide:
+* Create a local database for the shop called shop_db. In the terminal run: createdb shop_db
+* In resources.application.properties, copy the following code :
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/shop_db
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
+
 
 
 
