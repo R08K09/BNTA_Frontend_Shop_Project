@@ -17,8 +17,6 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @Autowired
-    Product product;
 
 
 //    Display all product details
@@ -34,15 +32,15 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<List<Product>> getAllProductsAndFilters(
             @RequestParam(required = false, name = "category") String category,
-            @RequestParam(required = false, name = "colour") String colour,
-            @RequestParam(required = true, name = "isSold") boolean isSold
+            @RequestParam(required = false, name = "colour") String colour
+          //  @RequestParam(required = true, name = "isSold") boolean isSold
     ){
         //    Get vehicle by category
-        if (category != null && product.isSold() == false ){
+        if (category != null){
             return new ResponseEntity<>(productService.findAllProductsByCategory(category), HttpStatus.OK);
         }
 //        Get all vehicle by colour
-        if (colour != null &){
+        if (colour != null){
             return new ResponseEntity<>(productService.findAllProductsByColour(colour), HttpStatus.OK);
         }
 //        Get all products

@@ -62,8 +62,13 @@ public class CustomerController {
     @GetMapping
     public ResponseEntity<List<Customer>> getAllCustomers(){
         return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
-
     }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Customer> findCustomersById(@PathVariable Long id){
+        return new ResponseEntity<>(customerService.findCustomerById(id), HttpStatus.OK);
+    }
+
 //    @PatchMapping(value = "/{id}")
 //    public ResponseEntity<Customer> addProductToCustomer(@PathVariable long id,
 //                                                         @RequestParam Long productId){

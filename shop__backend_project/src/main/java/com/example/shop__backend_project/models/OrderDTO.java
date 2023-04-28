@@ -7,15 +7,12 @@ import java.time.LocalDate;
 public class OrderDTO {
     private long productId;
     private long customerId;
-    private int orderTotal;
-
     private LocalDate dateOfPurchase;
 
 
-    public OrderDTO(long productId, long customerId, LocalDate dateOfPurchase, int orderTotal){
+    public OrderDTO(long productId, long customerId, LocalDate dateOfPurchase){
         this.productId = productId;
         this.customerId = customerId;
-        this.orderTotal = orderTotal;
         this.dateOfPurchase = dateOfPurchase;
     }
     public OrderDTO(){
@@ -36,14 +33,6 @@ public class OrderDTO {
 
     public void setCustomerId(long customerId) {
         this.customerId = customerId;
-    }
-
-    public int getOrderTotal() {
-        return orderTotal;
-    }
-
-    public void setOrderTotal(int orderTotal) {
-        this.orderTotal = orderTotal;
     }
 
     public LocalDate getDateOfPurchase() {

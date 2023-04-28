@@ -42,9 +42,6 @@ public class Order {
         this.customer = customer;
         this.dateOfPurchase = dateOfPurchase;
 
-    public Order(LocalDate dateOfPurchase, DiscountEnum discount, int orderTotal){
-        this.dateOfPurchase = dateOfPurchase;
-        this.discount = discount;
 
         this.orderTotal = orderTotal;
     }

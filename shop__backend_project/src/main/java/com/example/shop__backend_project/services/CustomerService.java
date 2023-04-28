@@ -22,6 +22,10 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
+    public Customer findCustomerById(Long id) {
+        return customerRepository.findById(id).get();
+    }
+
     public Customer updateCustomer(Customer customer, Long id) {
         Customer updatedCustomer = customerRepository.findById(id).get();
         updatedCustomer.setName(customer.getName());
