@@ -31,27 +31,18 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProductsAndFilters(
-            @RequestParam(required = false, name = "category") String category,
-            @RequestParam(required = false, name = "colour") String colour
-          //  @RequestParam(required = true, name = "isSold") boolean isSold
-    ){
-        //    Get vehicle by category
-        if (category != null){
-            return new ResponseEntity<>(productService.findAllProductsByCategory(category), HttpStatus.OK);
-        }
-//        Get all vehicle by colour
-        if (colour != null){
-            return new ResponseEntity<>(productService.findAllProductsByColour(colour), HttpStatus.OK);
-        }
-//        Get all products
+            @RequestParam(required = false, name = "purchased") Boolean purchased
+    ) {
+            if (purchased != null) {
+                return new ResponseEntity<>(productService.getAllProductsBySoldStatus(purchased), HttpStatus.OK);
+           }
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
 
+
+
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Product> updateProduct(
-            @RequestBody Product product,
-            @PathVariable Long id
-    ){
+    public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable Long id){
         Product updatedProduct = productService.updateProduct(product, id);
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
 

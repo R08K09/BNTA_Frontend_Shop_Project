@@ -77,4 +77,9 @@ public class ProductService {
         }
     }
 
+
+    public List<Product> getAllProductsBySoldStatus(boolean isSold){
+       return productRepository.findByIsSold(isSold);
+    }
+
 }

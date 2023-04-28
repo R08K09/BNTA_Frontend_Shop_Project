@@ -102,7 +102,7 @@ public class Product {
         this.customer = customer;
     }
 
-    public boolean isSold() {
+    public boolean getSold() {
         return isSold;
     }
 

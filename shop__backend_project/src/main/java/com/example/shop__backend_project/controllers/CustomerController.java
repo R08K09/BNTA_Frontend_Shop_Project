@@ -69,15 +69,14 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.findCustomerById(id), HttpStatus.OK);
     }
 
-//    @PatchMapping(value = "/{id}")
-//    public ResponseEntity<Customer> addProductToCustomer(@PathVariable long id,
-//                                                         @RequestParam Long productId){
-////    long productId = product.getId();
-//    Customer customerWithProduct = customerService.addProductToCustomer(id, productId);
-//    Product productSold = productService.findProductById(productId);
-//    productSold.setCustomer(customerWithProduct);
-//          productService.isProductSold(productSold, productId);
-//    return new ResponseEntity<>(customerWithProduct,HttpStatus.OK);
-//    }
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<Customer> addProductToCustomer(@PathVariable long id,
+                                                         @RequestParam Long productId){
+    Customer customerWithProduct = customerService.addProductToCustomer(id, productId);
+    Product productSold = productService.findProductById(productId);
+    productSold.setCustomer(customerWithProduct);
+          productService.isProductSold(productSold, productId);
+    return new ResponseEntity<>(customerWithProduct,HttpStatus.OK);
+    }
 
 }
