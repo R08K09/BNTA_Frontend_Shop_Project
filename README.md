@@ -5,7 +5,7 @@
 
 - GitHub: [Kelly Wong](https://github.com/KKLW97)
 - GitHub: [Theo Lloyd](https://github.com/theollo)
-- GitHub: [Subrina](https://github.com/Subrina7)
+- GitHub: [Subrina Faisal](https://github.com/Subrina7)
 - GitHub: [Fiona Eshun](https://github.com/Fiona2223)
 
 <br />
