@@ -12,6 +12,23 @@
 * Function to allow for discounts to select customers
 * Creating a function to stop sold items being shown to customers
 
+## Technical Information
+* Spring Build and Dependencies:
+* Project type: Maven
+* Spring Version: 3.0.6
+* Java Version: 17
+* Dependencies
+* DevTools
+* Web
+* PostgreSQL
+* JPA
+* Software used:
+* IntelliJ
+* Postman
+* Postico
+* PostgreSQL
+
+
 
 
 ## UML DIAGRAM
