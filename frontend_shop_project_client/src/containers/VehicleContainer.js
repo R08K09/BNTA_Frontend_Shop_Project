@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import HeroSlideshow from "../components/HeroSlideshow";
 import VehicleForm from "../components/VehicleForm";
 import VehicleList from "../components/VehicleList";
+import { sliderImages } from "../sliderImages";
 
 const VehicleContainer = () => {
 
@@ -23,7 +24,7 @@ const VehicleContainer = () => {
     return ( 
         <div>
             <Header/>
-            <HeroSlideshow/>
+            <HeroSlideshow slides={sliderImages}/>
             <VehicleForm/>
             <VehicleList listOfVehicles={listOfVehicles} />
             <p>Hi from container</p>
