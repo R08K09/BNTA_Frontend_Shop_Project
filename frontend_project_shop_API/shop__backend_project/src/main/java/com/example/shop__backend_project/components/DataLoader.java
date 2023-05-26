@@ -26,12 +26,35 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader(){}
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Product fairSeas = new Product("Fair Seas", "Blue and white", "Boat", 5000000, true);
-        productRepository.save(fairSeas);
-        Product fancyCar = new Product("Fancy car", "Gold", "Car", 10000000, true);
-        productRepository.save(fancyCar);
-        Product concord = new Product("Concord","White","Plane",1000000000, false);
-        productRepository.save(concord);
+
+//        Boats
+        Product squadron = new Product("Squadron", "White", "Boat", 5000000, false);
+        productRepository.save(squadron);
+        Product renegade = new Product("Renegade", "Black", "Boat", 10000000, false);
+        productRepository.save(renegade);
+        Product sunDeckSport = new Product("SunDeck Sport", "Blue", "Boat", 250000000, false);
+        productRepository.save(sunDeckSport);
+
+//        Cars
+        Product aClass = new Product("A Class", "White", "Car", 70000000, false);
+        productRepository.save(aClass);
+        Product amgGt = new Product("AMG GT", "Black", "Car", 55000000, false);
+        productRepository.save(amgGt);
+        Product gClass = new Product("G Class", "Green", "Car", 10000000, false);
+        productRepository.save(gClass);
+
+//        Planes
+        Product plane737 = new Product("737 Max","turquoise","Plane",1000000000, false);
+        productRepository.save(plane737);
+        Product plane777 = new Product("777","Grey","Plane",1500000000, false);
+        productRepository.save(plane777);
+        Product plane787 = new Product("787","Violet","Plane",2000000000, false);
+        productRepository.save(plane787);
+
+
+
+
+
 
         Customer fiona = new Customer("Fiona", "fiona@bnta.com", DiscountEnum.STUDENT);
         customerRepository.save(fiona);
@@ -42,17 +65,14 @@ public class DataLoader implements ApplicationRunner {
 //        Customer kelly = new Customer("Kelly", "kelly@bnta.com");
 //        customerRepository.save(kelly);
 
-        fairSeas.setCustomer(fiona);
-        fancyCar.setCustomer(theo);
+        squadron.setCustomer(fiona);
+        aClass.setCustomer(theo);
         //concord.setCustomer(subrina);
 
-        productRepository.save(fairSeas);
-        productRepository.save(fancyCar);
-        productRepository.save(concord);
 
 
-        Order order1 = new Order(fairSeas, fiona,LocalDate.of(2023,04,26), 10000);
-        Order order2 = new Order(fancyCar, theo, LocalDate.of(2023,04,26), 10000);
+        Order order1 = new Order(squadron, fiona,LocalDate.of(2023,04,26), 10000);
+        Order order2 = new Order(aClass, theo, LocalDate.of(2023,04,26), 10000);
         orderRepository.save(order1);
         orderRepository.save(order2);
     }
