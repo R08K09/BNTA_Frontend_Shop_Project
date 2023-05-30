@@ -1,10 +1,14 @@
 import Vehicle from "./Vehicle";
 
-const VehicleList = ({listOfVehicles}) => {
+const VehicleList = ({listOfVehicles, vehicleSearch}) => {
 
-    const carList = listOfVehicles.filter((vehicle) =>  vehicle.category === "Car")
-    const boatList = listOfVehicles.filter((vehicle) => vehicle.category === "Boat")
-    const planeList = listOfVehicles.filter((vehicle) => vehicle.category === "Plane")
+
+    const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.startsWith(vehicleSearch));
+
+
+    const carList = filteredVehicleList.filter((vehicle) =>  vehicle.category === "Car")
+    const boatList = filteredVehicleList.filter((vehicle) => vehicle.category === "Boat")
+    const planeList = filteredVehicleList.filter((vehicle) => vehicle.category === "Plane")
 
     const carComponents = carList.map((vehicle) => {
         return (

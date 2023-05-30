@@ -1,12 +1,21 @@
 const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch}) => {
 
+
+    const handleSearchInput = (e) => {
+        setVehicleSearch(e.target.value);
+    }
+
+
+
+
+
     return ( 
-        <header>
+        <header className="header">
             <div className="header-container">
 
                 <div className="company-tags">
                     {/* logo here */}
-                    <h1>*CompanyNameHere</h1>
+                    <h1>CompanyNameHere</h1>
                 </div>
                 <div className="customer-tags">
                     <button>Log In/Sign Up</button>
@@ -15,16 +24,15 @@ const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch}) => {
             </div>
 
                 <nav className="nav-bar">
-                    <a href="#">Cars</a>
-                    <a href="#">Planes</a>
-                    <a href="#">Boats</a>
+                    <a href="#carList">Cars</a>
+                    <a href="#planeList">Planes</a>
+                    <a href="#boatList">Boats</a>
 
-                    <div className="search_input_bar"> 
+                    <div className="search_input_bar">
                         <input 
-                            type="text" 
-                            value={vehicleSearch} 
-                            placeholder="Search for a meal.."
-                            onChange={(e) => setVehicleSearch(e.target.value)} />
+                            type="text"
+                            placeholder="Search for Vehicle"
+                            onInput={handleSearchInput}/>
                         <button onClick={fetchVehicles}>Search</button>
                      </div>
             

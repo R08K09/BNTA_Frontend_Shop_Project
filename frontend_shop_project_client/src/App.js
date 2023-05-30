@@ -1,5 +1,5 @@
 import './App.css';
-import Footer from './components/Footer';
+import Footer from './containers/Footer';
 import VehicleContainer from './containers/VehicleContainer';
 
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import Header from "./Header";
 import HeroSlideshow from "../components/HeroSlideshow";
 import VehicleForm from "../components/VehicleForm";
 import VehicleList from "../components/VehicleList";
@@ -24,13 +24,11 @@ const VehicleContainer = () => {
 
     return ( 
         <div>
-            <Header 
-            fetchVehicles={fetchVehicles} 
-            vehicleSearch={vehicleSearch}
+            <Header
             setVehicleSearch={setVehicleSearch}/>
             <HeroSlideshow slides={sliderImages}/>
             <VehicleForm/>
-            <VehicleList listOfVehicles={listOfVehicles} />
+            <VehicleList listOfVehicles={listOfVehicles} vehicleSearch={vehicleSearch} />
             <p>Hi from container</p>
         </div>
      );
