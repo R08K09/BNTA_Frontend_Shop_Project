@@ -8,6 +8,7 @@ import { sliderImages } from "../sliderImages";
 const VehicleContainer = () => {
 
     const [listOfVehicles, setListOfVehicles] = useState([]);
+    const [vehicleSearch, setVehicleSearch] = useState([]);
 
     const fetchVehicles  = async () => {
         const response = await fetch("http://localhost:8080/products");
@@ -23,7 +24,10 @@ const VehicleContainer = () => {
 
     return ( 
         <div>
-            <Header/>
+            <Header 
+            fetchVehicles={fetchVehicles} 
+            vehicleSearch={vehicleSearch}
+            setVehicleSearch={setVehicleSearch}/>
             <HeroSlideshow slides={sliderImages}/>
             <VehicleForm/>
             <VehicleList listOfVehicles={listOfVehicles} />

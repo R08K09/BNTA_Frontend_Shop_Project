@@ -29,13 +29,21 @@ const VehicleList = ({listOfVehicles}) => {
     return ( 
         <div>
             <h2>Cars</h2>
-            {carComponents}
+                <section id="carList">
+                    {carComponents}
+                </section>
             <hr/>
+
             <h2>Boats</h2>
-            {boatComponents}
+                <section id="boatList">
+                    {boatComponents}
+                </section>
+
             <hr/>
             <h2>Planes</h2>
-            {planeComponents}
+                <section id="planeList">
+                    {planeComponents}
+                </section>
         </div>
      );
 }

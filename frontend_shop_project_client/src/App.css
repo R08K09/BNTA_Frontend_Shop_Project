@@ -38,8 +38,8 @@
 }
 
 .vehicle-image {
-  width: 200px;
-  
+  width: 400px;
+  height: 300px;
 }
 
 
@@ -84,4 +84,42 @@
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.08);
+}
+
+
+
+#carList {
+  display: flex;
+  justify-content: space-around;
+}
+
+#boatList {
+  display: flex;
+  justify-content: space-around;
+}
+
+#planeList {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+ 
+}
+
+.customer-tags {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+.customer-tags button {
+  margin-right: 10px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
 }
