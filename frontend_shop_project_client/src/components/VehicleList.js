@@ -1,9 +1,10 @@
 import Vehicle from "./Vehicle";
 
-const VehicleList = ({listOfVehicles, vehicleSearch}) => {
+const VehicleList = ({listOfVehicles, vehicleSearch, maxPrice}) => {
 
 
-    const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.startsWith(vehicleSearch));
+    const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.startsWith(vehicleSearch) && vehicle.price <= maxPrice);
+    
 
 
     const carList = filteredVehicleList.filter((vehicle) =>  vehicle.category === "Car")
