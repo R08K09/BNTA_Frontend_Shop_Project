@@ -1,13 +1,18 @@
-const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch}) => {
 
+import LogInModal from "../components/LogInModal";
 
+const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch, listOfCustomers, setListOfCustomers, setLoggedInUserId}) => {
+
+    
+    // const handleOpenLogInModal = () => setOpenLogInModal(true);
+    // const handleCloseLogInModal = () => setOpenLogInModal(false);
+    
+    
     const handleSearchInput = (e) => {
         setVehicleSearch(e.target.value);
     }
 
-
-
-
+    
 
     return ( 
         <header className="header">
@@ -18,7 +23,7 @@ const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch}) => {
                     <h1>CompanyNameHere</h1>
                 </div>
                 <div className="customer-tags">
-                    <button>Log In/Sign Up</button>
+                    <LogInModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} setLoggedInUserId={setLoggedInUserId}/>
                     <button>My Account</button>
                 </div>
             </div>
