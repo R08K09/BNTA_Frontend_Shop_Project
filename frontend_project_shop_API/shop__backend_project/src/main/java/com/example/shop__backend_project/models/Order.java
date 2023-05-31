@@ -41,8 +41,6 @@ public class Order {
         this.product = product;
         this.customer = customer;
         this.dateOfPurchase = dateOfPurchase;
-
-
         this.orderTotal = orderTotal;
     }
     public Order(){

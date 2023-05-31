@@ -50,4 +50,18 @@ public class CustomerService {
         customerRepository.save(customer);
         return customer;
     }
+
+    public Customer buyProduct(long customerId, long productId) {
+
+        Customer customerToBuy = findCustomerById(customerId);
+        Product productToSell = productService.findProductById(productId);
+
+
+        productToSell.setCustomer(customerToBuy);
+        productToSell.setSold(true);
+
+        productService.save(productToSell);
+        return customerToBuy;
+    }
+
 }
