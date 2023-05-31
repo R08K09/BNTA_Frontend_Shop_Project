@@ -1,7 +1,8 @@
 
 import LogInModal from "../components/LogInModal";
+import MyAccountModal from "../components/MyAccountModal";
 
-const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch, listOfCustomers, setListOfCustomers, setLoggedInUserId}) => {
+const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCustomers, setLoggedInUserId, loggedInUserId}) => {
 
     
     // const handleOpenLogInModal = () => setOpenLogInModal(true);
@@ -11,6 +12,8 @@ const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch, listOfCustomers
     const handleSearchInput = (e) => {
         setVehicleSearch(e.target.value);
     }
+
+    const loggedInCustomer = listOfCustomers.find((customer) => customer.id === loggedInUserId)
 
     
 
@@ -24,7 +27,7 @@ const Header = ({fetchVehicles, vehicleSearch, setVehicleSearch, listOfCustomers
                 </div>
                 <div className="customer-tags">
                     <LogInModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} setLoggedInUserId={setLoggedInUserId}/>
-                    <button>My Account</button>
+                    {loggedInUserId > 0 ? <MyAccountModal loggedInCustomer={loggedInCustomer}/> : <> </>}
                 </div>
             </div>
 
