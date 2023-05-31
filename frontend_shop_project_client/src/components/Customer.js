@@ -1,8 +1,9 @@
-const Customer = ({customer, setLoggedInUserId}) => {
+const Customer = ({customer, setLoggedInUserId, setOpenLogInModal}) => {
 
     const handleUserSelection = () => {
         // console.log(customer.id);
         setLoggedInUserId(customer.id);
+        setOpenLogInModal(false);
     }
 
     return ( 

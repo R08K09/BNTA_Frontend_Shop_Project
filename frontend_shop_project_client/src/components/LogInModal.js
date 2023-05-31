@@ -25,7 +25,7 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId}) =
         p: 4,
     };
 
-    const customerComponents = listOfCustomers.map((customer) => <Customer customer={customer} setLoggedInUserId={setLoggedInUserId}/>)
+    const customerComponents = listOfCustomers.map((customer) => <Customer customer={customer} setLoggedInUserId={setLoggedInUserId} setOpenLogInModal={setOpenLogInModal}/>)
 
     return ( 
         <>
@@ -46,7 +46,7 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId}) =
                             className="sign-up-modal"
                             >
                                 <Box sx={style}>
-                                    <SignUpForm setLoggedInUserId={setLoggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
+                                    <SignUpForm setOpenSignUpModal={setOpenSignUpModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
                                 </Box>
                             </Modal>
                         </Box>
