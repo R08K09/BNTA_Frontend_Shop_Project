@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {images} from "../images";
 import BuyProductModal from "./BuyProductModal";
 
-const Vehicle = ({vehicle, loggedInUserId}) => {
+const Vehicle = ({vehicle, loggedInUserId, listOfCustomers, setListOfCustomers}) => {
 
     const [inspecting, setInspecting] = useState(false);
  
@@ -27,12 +27,13 @@ const Vehicle = ({vehicle, loggedInUserId}) => {
                 <h3>{vehicle.name}</h3>
                 <p>Price: £{displayPrice}.00</p>
                 <p>Colour: {vehicle.colour}</p>
-                <BuyProductModal vehicle={vehicle} loggedInUserId={loggedInUserId}/>
+                <BuyProductModal vehicle={vehicle} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
             </div>
             : 
             <div className="product-not-inspected">
                 {imageComponent}
                 <h3>{vehicle.name}</h3>
+                {vehicle.sold ? <h1>Sold</h1> : <></>}
             </div>
             }
         </>

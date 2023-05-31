@@ -1,8 +1,8 @@
 import { Modal } from "@mui/base";
 import { Box } from "@mui/system";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const BuyProductModal = ({vehicle, loggedInUserId}) => {
+const BuyProductModal = ({vehicle, loggedInUserId, listOfCustomers, setListOfCustomers}) => {
 
     const [openBuyProductModal, setOpenBuyProductModal] = useState(false);
     const handleToggleBuyProductModal = () => {setOpenBuyProductModal(!openBuyProductModal)};
@@ -13,7 +13,19 @@ const BuyProductModal = ({vehicle, loggedInUserId}) => {
             method: "PATCH",
             headers: { "Content-Type": "application/json"}
         })
-        // .then((response) => response.json())
+        .then((response) => response.json())
+        .then((responseCustomer) =>{
+            const updatedCustomerList = listOfCustomers.map((customer) => {
+                if(customer.id === responseCustomer.id){
+                    return responseCustomer;
+                }else{
+                    return customer
+                }
+        })
+        setListOfCustomers(updatedCustomerList);
+    })
+        vehicle.sold = true;
+        handleToggleBuyProductModal();
     })
 
     const style = {

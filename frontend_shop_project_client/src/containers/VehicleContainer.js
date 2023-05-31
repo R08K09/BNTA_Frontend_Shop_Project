@@ -47,7 +47,7 @@ const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomer
             {/* <VehicleForm setMaxPrice={setMaxPrice} sliderValue={sliderValue}
             maxVehiclePrice={maxVehiclePrice} maxPrice={maxPrice}/> */}
             <VehicleSlider sliderValue={sliderValue} setSliderValue={setSliderValue}  filterMaxPrice={filterMaxPrice}/>
-            <VehicleList listOfVehicles={listOfVehicles} vehicleSearch={vehicleSearch} filterMaxPrice={filterMaxPrice} loggedInUserId={loggedInUserId}/>
+            <VehicleList listOfVehicles={listOfVehicles} vehicleSearch={vehicleSearch} filterMaxPrice={filterMaxPrice} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
             <p>Hi from container</p>
         </div>
      );

@@ -1,6 +1,6 @@
 import Vehicle from "./Vehicle";
 
-const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUserId}) => {
+const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUserId, listOfCustomers, setListOfCustomers}) => {
 
 
     const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.startsWith(vehicleSearch) && vehicle.price <= filterMaxPrice);
@@ -13,19 +13,19 @@ const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUse
 
     const carComponents = carList.map((vehicle) => {
         return (
-            <Vehicle vehicle = {vehicle} loggedInUserId={loggedInUserId}/>
+            <Vehicle vehicle = {vehicle} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
         );
     })
 
     const boatComponents = boatList.map((vehicle) => {
         return (
-            <Vehicle vehicle = {vehicle} loggedInUserId={loggedInUserId}/>
+            <Vehicle vehicle = {vehicle} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
         );
     })
 
     const planeComponents = planeList.map((vehicle) => {
         return (
-            <Vehicle vehicle = {vehicle} loggedInUserId={loggedInUserId}/>
+            <Vehicle vehicle = {vehicle} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
         );
     })
 
