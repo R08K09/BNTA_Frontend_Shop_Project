@@ -24,7 +24,8 @@ function App() {
        <VehicleContainer 
        listOfCustomers={listOfCustomers} 
        setLoggedInUserId ={setLoggedInUserId} 
-       setListOfCustomers={setListOfCustomers}/>
+       setListOfCustomers={setListOfCustomers}
+       loggedInUserId={loggedInUserId}/>
        <Footer/>
     </div>
   );

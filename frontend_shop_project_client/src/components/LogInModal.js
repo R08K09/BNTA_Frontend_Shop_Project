@@ -30,27 +30,27 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId}) =
     return ( 
         <>
         <button onClick={handleToggleLogInModal}>Log In/Sign Up</button>
-                    <Modal 
-                        open={openLogInModal}
-                        onClose={handleToggleLogInModal}
-                        // onClick={handleToggleLogInModal}
-                        className="log-in-modal">
-                        <Box sx={style}>
-                            <h2>Select User or Sign Up</h2>
-                            {customerComponents}
-                            <button onClick={handleToggleSignUpModal}>Sign Up</button>
-                            <Modal
-                            open={openSignUpModal}
-                            onClose={handleToggleSignUpModal}
-                            // onClick={handleToggleSignUpModal}
-                            className="sign-up-modal"
-                            >
-                                <Box sx={style}>
-                                    <SignUpForm setOpenSignUpModal={setOpenSignUpModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
-                                </Box>
-                            </Modal>
-                        </Box>
+            <Modal 
+                open={openLogInModal}
+                onClose={handleToggleLogInModal}
+                className="log-in-modal">
+                <Box sx={style}>
+                    <h2>Select User or Sign Up</h2>
+                    <button onClick={handleToggleLogInModal}>X</button>
+                    {customerComponents}
+                    <button onClick={handleToggleSignUpModal}>Sign Up</button>
+                    <Modal
+                        open={openSignUpModal}
+                        onClose={handleToggleSignUpModal}
+                        className="sign-up-modal"
+                        >
+                            <Box sx={style}>
+                                <button onClick={handleToggleSignUpModal}>X</button>
+                                <SignUpForm setOpenSignUpModal={setOpenSignUpModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
+                            </Box>
                     </Modal>
+                </Box>
+            </Modal>
         </>
      );
 }

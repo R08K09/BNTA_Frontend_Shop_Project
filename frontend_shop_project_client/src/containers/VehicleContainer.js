@@ -6,7 +6,7 @@ import VehicleList from "../components/VehicleList";
 import { sliderImages } from "../sliderImages";
 import VehicleSlider from "../components/VehicleSlider";
 
-const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomers}) => {
+const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomers, loggedInUserId}) => {
 
     const [listOfVehicles, setListOfVehicles] = useState([]);
     const [vehicleSearch, setVehicleSearch] = useState([]);
@@ -41,7 +41,8 @@ const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomer
             listOfCustomers={listOfCustomers}
             setListOfCustomers={setListOfCustomers}
             setVehicleSearch={setVehicleSearch}
-            setLoggedInUserId ={setLoggedInUserId}/>
+            setLoggedInUserId ={setLoggedInUserId}
+            loggedInUserId={loggedInUserId}/>
             <HeroSlideshow slides={sliderImages}/>
             {/* <VehicleForm setMaxPrice={setMaxPrice} sliderValue={sliderValue}
             maxVehiclePrice={maxVehiclePrice} maxPrice={maxPrice}/> */}
