@@ -1,14 +1,22 @@
 import { Modal } from "@mui/base";
 import { Box } from "@mui/material";
 import { useState } from "react";
+import SignUpForm from "./SignUpForm";
 
-const MyAccountModal = ({loggedInCustomer}) => {
+const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers}) => {
 
     const [openMyAccountModal, setOpenMyAccountModal] = useState(false);
     const [openUpdateAccountModal, setOpenUpdateAccountModal] = useState(false);
 
     const handleToggleMyAccountModal = () => setOpenMyAccountModal(!openMyAccountModal);
     const handleToggleUpdateAccountModal = () => setOpenUpdateAccountModal(!openUpdateAccountModal);
+
+    const customerProductsList = loggedInCustomer.products.map((product) => {
+        return <ul>
+            <li>{product.name}</li>
+            <li>{product.price}</li>
+            </ul>
+    })
 
     const style = {
         position: 'absolute',
@@ -36,14 +44,14 @@ const MyAccountModal = ({loggedInCustomer}) => {
                 <p>{loggedInCustomer.name}</p>
                 <p>{loggedInCustomer.email}</p>
                 <p>{loggedInCustomer.discountCategory}</p>
-                <p>{loggedInCustomer.products}</p>
+                {customerProductsList}
 
                 <button onClick={handleToggleUpdateAccountModal}>Update Account Details</button>
                 <Modal
                     open={openUpdateAccountModal}
                     onClose={handleToggleUpdateAccountModal}>
                     <Box sx={style}>
-                        <p>hello</p>
+                        <SignUpForm setOpenSignUpModal={setOpenUpdateAccountModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} loggedInCustomer={loggedInCustomer}/>
                     </Box>
                 </Modal>
 

@@ -26,8 +26,10 @@ const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCust
                     <h1>CompanyNameHere</h1>
                 </div>
                 <div className="customer-tags">
-                    <LogInModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} setLoggedInUserId={setLoggedInUserId}/>
-                    {loggedInUserId > 0 ? <MyAccountModal loggedInCustomer={loggedInCustomer}/> : <> </>}
+                    <LogInModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} setLoggedInUserId={setLoggedInUserId} loggedInUserId={loggedInUserId}/>
+                    {loggedInUserId > 0 ? <MyAccountModal 
+                        loggedInCustomer={loggedInCustomer} 
+                        listOfCustomers={listOfCustomers} setListOfCustomers ={setListOfCustomers}/> : <> </>}
                 </div>
             </div>
 

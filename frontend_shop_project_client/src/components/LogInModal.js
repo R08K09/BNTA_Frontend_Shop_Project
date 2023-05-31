@@ -4,7 +4,7 @@ import { useState } from "react";
 import Customer from "./Customer";
 import SignUpForm from "./SignUpForm";
 
-const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId}) => {
+const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId, loggedInUserId}) => {
 
     const [openLogInModal, setOpenLogInModal] = useState(false);
     const [openSignUpModal, setOpenSignUpModal] = useState(false);
@@ -29,7 +29,9 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId}) =
 
     return ( 
         <>
-        <button onClick={handleToggleLogInModal}>Log In/Sign Up</button>
+        <button onClick={handleToggleLogInModal}>
+            {loggedInUserId <=0 ? "Log In/Sign Up" : "Switch account"}
+            </button>
             <Modal 
                 open={openLogInModal}
                 onClose={handleToggleLogInModal}

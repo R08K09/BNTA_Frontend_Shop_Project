@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers}) => {
+const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, loggedInCustomer}) => {
     const [newCustomer, setNewCustomer] = useState({
         name: "",
         email: "",
@@ -54,11 +54,9 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers}) =
 
     const handleDiscountCategoryChange = (event) => {
         const categoryName = event.target.value;
-        console.log(categoryName);
         const selectedCategory = discountCategories.find(discount => {
             return discount.category === categoryName;
         });
-        console.log(selectedCategory.category);
         if(selectedCategory.category !== "none"){
             const copiedCustomer = {...newCustomer};
             copiedCustomer.discountCategory = selectedCategory.category;
@@ -68,13 +66,12 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers}) =
             copiedCustomer.discountCategory = null;
             setNewCustomer(copiedCustomer);
         }
-        // console.log(newCustomer);
     }
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        loggedInCustomer ? updateCustomer(newCustomer) : postCustomer(newCustomer);
         // POST request to create new customer
-        postCustomer(newCustomer);
         // close modals
         setOpenSignUpModal(false);
     }
@@ -92,6 +89,28 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers}) =
         })
     };
 
+    
+    console.log(listOfCustomers);
+
+    const updateCustomer = (newCustomer) => {
+        fetch(`http://localhost:8080/customers/${loggedInCustomer.id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newCustomer),
+        })
+        .then((response) => response.json())
+        .then((responseCustomer) =>{
+            const updatedCustomerList = listOfCustomers.map((customer) => {
+                if(customer.id === responseCustomer.id){
+                    return responseCustomer;
+                }else{
+                    return customer
+                }
+        })
+        setListOfCustomers(updatedCustomerList);
+    })
+}
+
 
     return ( 
         <form onSubmit={handleFormSubmit} >
@@ -99,17 +118,20 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers}) =
                 type="text"
                 name="name"
                 value={newCustomer.name}
-                placeholder="enter name"
+                placeholder={loggedInCustomer ? "update name" : "enter name"}
                 onChange={handleChange}
             />
-
+            {loggedInCustomer ? 
+            <p>{loggedInCustomer.email}</p>
+            
+            :
             <input 
                 type="email"
                 name="email"
                 value={newCustomer.email}
                 placeholder="enter email"
                 onChange={handleChange}
-            />
+            />}
 
             <select 
                 onChange={handleDiscountCategoryChange}
@@ -120,7 +142,7 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers}) =
                 {discountOptions}
             </select>
 
-            <button type="submit">Sign Up</button>
+            <button type="submit">{loggedInCustomer ? "Update" : "Sign Up"}</button>
         </form>
      );
 }
