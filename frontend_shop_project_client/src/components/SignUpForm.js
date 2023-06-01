@@ -167,7 +167,8 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
 
     return ( 
         <>
-            <form onSubmit={handleFormSubmit} >
+            <form className="sign-up-form" onSubmit={handleFormSubmit} >
+                <h2>Please enter your details</h2>
                 <input 
                     type="text"
                     name="name"
@@ -197,10 +198,10 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
                 </select>
 
                 <button type="submit">{loggedInCustomer ? "Update" : "Sign Up"}</button>
-                
-            </form>
 
-            <p>{error}</p>
+                <p>{error}</p>    
+            </form>
+          
         </>
      );
 }

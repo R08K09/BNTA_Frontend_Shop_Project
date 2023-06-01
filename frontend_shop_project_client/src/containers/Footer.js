@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
             <div className="footer-logo">
-                <img src="https://static.vecteezy.com/system/resources/previews/020/108/970/original/tfl-flat-accounting-logo-design-on-white-background-tfl-creative-initials-growth-graph-letter-logo-concept-tfl-business-finance-logo-design-vector.jpg" alt="tfl logo" width="150" />
+                <img className="header-image" src="https://static.vecteezy.com/system/resources/previews/020/108/970/original/tfl-flat-accounting-logo-design-on-white-background-tfl-creative-initials-growth-graph-letter-logo-concept-tfl-business-finance-logo-design-vector.jpg" alt="tfl logo" width="150" />
             </div>
 
     </footer>

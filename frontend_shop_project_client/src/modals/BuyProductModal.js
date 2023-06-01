@@ -36,10 +36,12 @@ const BuyProductModal = ({vehicle, loggedInUserId, listOfCustomers, setListOfCus
         <Modal className = "buy-product-modal" open = {openBuyProductModal} onClose={handleToggleBuyProductModal}>
             <Box className="modal">
                 <button className="x-button" onClick={handleToggleBuyProductModal}>X</button>
-                <h2>Please confirm your order:</h2>
-                <p>name: {vehicle.name}</p>
-                <p>£{displayPrice}.00</p>
-                <button onClick={buyProduct}>Confirm Order</button>
+                <div className="confirm-order-details">
+                    <h2>Please confirm your order:</h2>
+                    <p>Name: {vehicle.name}</p>
+                    <p>Price: £{displayPrice}.00</p>
+                    <button className="confirm-button" onClick={buyProduct}>Confirm Order</button>
+                </div>
             </Box>
         </Modal>
         

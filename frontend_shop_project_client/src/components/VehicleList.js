@@ -36,6 +36,7 @@ const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUse
 
     return ( 
         <div className="vehicle-list">
+            {carListSize === 0 && boatListSize === 0 && planeListSize === 0 ? <h2>No Products Found</h2> : <></>}
             {carListSize > 0 ? 
             <>
                 <h2>Cars</h2>

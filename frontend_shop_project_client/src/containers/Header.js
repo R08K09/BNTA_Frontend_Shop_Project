@@ -23,7 +23,7 @@ const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCust
             <div className="header-container">
 
                 <div className="company-tags">
-                    <img src="https://static.vecteezy.com/system/resources/previews/020/108/970/original/tfl-flat-accounting-logo-design-on-white-background-tfl-creative-initials-growth-graph-letter-logo-concept-tfl-business-finance-logo-design-vector.jpg" alt="tfl logo" width="150px"/>
+                    <img className="header-image" src="https://static.vecteezy.com/system/resources/previews/020/108/970/original/tfl-flat-accounting-logo-design-on-white-background-tfl-creative-initials-growth-graph-letter-logo-concept-tfl-business-finance-logo-design-vector.jpg" alt="tfl logo" width="150px"/>
                     <h1>Travel. Freedom. Luxury </h1>
                 </div>
         
