@@ -97,10 +97,10 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
     };
 
     
-    console.log(listOfCustomers);
+    // console.log(listOfCustomers);
 
     const updateCustomer = (newCustomer) => {
-        console.log(newCustomer)
+        console.log(JSON.stringify(newCustomer));
         fetch(`http://localhost:8080/customers/${loggedInCustomer.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -116,6 +116,7 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
                 }
         })
         setListOfCustomers(updatedCustomerList);
+        console.log(updatedCustomerList);
     })
 }
 
