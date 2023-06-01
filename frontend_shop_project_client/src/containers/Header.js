@@ -30,7 +30,7 @@ const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCust
                     <LogInModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} setLoggedInUserId={setLoggedInUserId} loggedInUserId={loggedInUserId}/>
                     {loggedInUserId > 0 ? <MyAccountModal 
                         loggedInCustomer={loggedInCustomer} 
-                        listOfCustomers={listOfCustomers} setListOfCustomers ={setListOfCustomers}/> : <> </>}
+                        listOfCustomers={listOfCustomers} setListOfCustomers ={setListOfCustomers} setLoggedInUserId={setLoggedInUserId}/> : <> </>}
                 </div>
             </div>
 

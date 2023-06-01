@@ -25,7 +25,10 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId, lo
         p: 4,
     };
 
-    const customerComponents = listOfCustomers.map((customer) => <Customer customer={customer} setLoggedInUserId={setLoggedInUserId} setOpenLogInModal={setOpenLogInModal}/>)
+    const filteredListOfCustomers = listOfCustomers.filter((customer) => !customer.deactivated)
+
+    const customerComponents = filteredListOfCustomers.map((customer) => <Customer customer={customer} setLoggedInUserId={setLoggedInUserId} setOpenLogInModal={setOpenLogInModal}/>)
+
 
     return ( 
         <>

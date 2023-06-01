@@ -2,14 +2,23 @@ import { Modal } from "@mui/base";
 import { Box } from "@mui/material";
 import { useState } from "react";
 import SignUpForm from "./SignUpForm";
+import DeactivateAccountModal from "./DeactivateAccountModal";
 
-const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers}) => {
+const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers, setLoggedInUserId}) => {
 
     const [openMyAccountModal, setOpenMyAccountModal] = useState(false);
     const [openUpdateAccountModal, setOpenUpdateAccountModal] = useState(false);
+    const [openDeactivateAccountModal, setOpenDeactivateAccountModal] = useState(false)
 
     const handleToggleMyAccountModal = () => setOpenMyAccountModal(!openMyAccountModal);
     const handleToggleUpdateAccountModal = () => setOpenUpdateAccountModal(!openUpdateAccountModal);
+    const handleToggleDeactivateAccountModal = () => setOpenDeactivateAccountModal(!openDeactivateAccountModal);
+
+
+    const handleLogOut = () => {
+        handleToggleMyAccountModal();
+        setLoggedInUserId(0);
+    }
 
     const customerProductsList = loggedInCustomer.products.map((product) => {
         return <ul>
@@ -56,9 +65,10 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers})
                         <SignUpForm setOpenSignUpModal={setOpenUpdateAccountModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} loggedInCustomer={loggedInCustomer}/>
                     </Box>
                 </Modal>
-
+                <button onClick={handleLogOut}>Log Out</button>
+                    <DeactivateAccountModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} loggedInCustomer={loggedInCustomer} setLoggedInUserId={setLoggedInUserId} handleToggleMyAccountModal={handleToggleMyAccountModal} />
             </Box>
-        </Modal>
+            </Modal>
         </>
     );
 }
