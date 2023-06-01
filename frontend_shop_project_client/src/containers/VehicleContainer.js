@@ -9,7 +9,7 @@ import VehicleSlider from "../components/VehicleSlider";
 const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomers, loggedInUserId}) => {
 
     const [listOfVehicles, setListOfVehicles] = useState([]);
-    const [vehicleSearch, setVehicleSearch] = useState([]);
+    const [vehicleSearch, setVehicleSearch] = useState("");
     const [filterMaxPrice, setFilterMaxPrice] = useState(0);
     const [sliderValue, setSliderValue] = useState(100);
 

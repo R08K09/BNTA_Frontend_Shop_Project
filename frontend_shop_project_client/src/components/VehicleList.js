@@ -3,13 +3,16 @@ import Vehicle from "./Vehicle";
 const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUserId, listOfCustomers, setListOfCustomers}) => {
 
 
-    const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.includes(vehicleSearch) && vehicle.price <= filterMaxPrice);
+    const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.toLowerCase().includes(vehicleSearch.toLowerCase()) && vehicle.price <= filterMaxPrice);
     
-
 
     const carList = filteredVehicleList.filter((vehicle) =>  vehicle.category === "Car")
     const boatList = filteredVehicleList.filter((vehicle) => vehicle.category === "Boat")
     const planeList = filteredVehicleList.filter((vehicle) => vehicle.category === "Plane")
+
+    const carListSize = carList.length;
+    const boatListSize = boatList.length;
+    const planeListSize = planeList.length;
 
     const carComponents = carList.map((vehicle) => {
         return (
@@ -33,22 +36,37 @@ const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUse
 
     return ( 
         <div className="vehicle-list">
-            <h2>Cars</h2>
-                <section id="carList">
-                    {carComponents}
-                </section>
-            <hr/>
+            {carListSize > 0 ? 
+            <>
+                <h2>Cars</h2>
+                    <section id="carList">
+                        {carComponents}
+                    </section>
+                <hr/>
+            </>
+            :
+            <></>}
 
-            <h2>Boats</h2>
+            {boatListSize > 0 ? 
+            <>
+                <h2>Boats</h2>
                 <section id="boatList">
                     {boatComponents}
-                </section>
+                </section> 
+                <hr/>
+            </>
+            :  
+            <></>}
 
-            <hr/>
-            <h2>Planes</h2>
+            {planeListSize > 0 ? 
+            <>  
+                <h2>Planes</h2>
                 <section id="planeList">
                     {planeComponents}
                 </section>
+            </>
+            :
+            <></>}
         </div>
      );
 }
