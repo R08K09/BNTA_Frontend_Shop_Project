@@ -125,7 +125,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 500px;
   height:800px;
 }
 
@@ -133,7 +133,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 500px;
   height: 800px;
 }
 
@@ -141,7 +141,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 500px;
   height: 800px;
 }
 
@@ -250,6 +250,7 @@ header {
 }
 
 footer {
+  margin: 3%;
   display: flex;
   justify-content: space-around;
   padding: 20px;
