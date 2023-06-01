@@ -3,7 +3,7 @@
 
 ## Project Overview
 Our project involved creating a React front-end application that provides an interface for one fo the server-side APIs developed by another backend group during our bootcamp.
-By utilising many tools and features, we were able to design and create an interactive interface that showcases the functionality fo our API with styling for better user experience.
+By utilising many tools and features, we were able to design and create an interactive interface that showcases the functionality of our API with styling for better user experience.
 
 
 ## Diagrams
@@ -22,6 +22,7 @@ We could create one - would showcase state and props
 * Postman
 * Spring Boot
 * React
+* Visual Studio Code
 
 Programming languages used:
 * Java (server-side)
@@ -29,14 +30,29 @@ Programming languages used:
 * HTML (client-side)
 * CSS (client-side)
 
+IntelliJ will need following dependencies to run the server-side application:
+* Spring Data JPA
+* Spring Boot DevTools
+* Spring Web
+
 
 ## Setup Instructions
-### Server-side Instructions
+1. Ensure that the following are installed on your machine:
+   * IntelliJ (JDK 17) - with Maven
+   * PostgresSQL
+   * Postman
+   * Postico
+   * Visual Studio Code
+2. Fork the repository in GitHub, so you can make changes without affecting the original project. To fork the repository, click Fork in the top-right corner of the page. Fill out the details and then press Create fork.
+3. Clone the forked repository from GitHub. To do this, at the top of forked repository page, click on the green < > Code button. Make sure that SSH is selected and then copy the link provided. Then within your terminal, in the working directory where you want the cloned directory, type the git clone command and paste the copied URL, then press Enter. It should look something like this:
+    <pre><code> git clone git@github.com:{YOUR-USERNAME}/client_side_project.git </code></pre>
+4. Create a new database by running the following line anywhere in your terminal: `createdb shop_db`
+5. In your terminal (within the frontend_shop_project_client/src that should be opened in Visual Studio Code), perform the following command: `npm install` or `npm i` to install node modules.
 
-
-
-### Client-side Instructions
-
+### Run the application
+1. Once you have installed all the necessary applications and dependencies for this project, run the BackendCodeApplication via Intellij IDEA. Ensure that there are no errors and that the API is running on port 8080.
+2. In the Visual Studio Code terminal, perform the following command: `npm start`. <br>
+    The App should automatically open in your browser. If it doesn't, you can manually navigate to `http://localhost:3000` using your preferred browser.
 
 
 ## Future Extensions
