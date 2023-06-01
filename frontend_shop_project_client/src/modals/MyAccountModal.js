@@ -27,17 +27,6 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers, 
             </ul>
     })
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'green',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
 
     return (
         <>
@@ -48,8 +37,8 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers, 
             onClose={handleToggleMyAccountModal}
             className="my-account-modal">
             
-            <Box sx={style}>
-                <button onClick={handleToggleMyAccountModal}>X</button>
+            <Box className="modal">
+                <button className="x-button" onClick={handleToggleMyAccountModal}>X</button>
                 <h2>Account Details:</h2>
                 <p>Name: {loggedInCustomer.name}</p>
                 <p>Email: {loggedInCustomer.email}</p>
@@ -61,7 +50,7 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers, 
                 <Modal
                     open={openUpdateAccountModal}
                     onClose={handleToggleUpdateAccountModal}>
-                    <Box sx={style}>
+                    <Box className="modal">
                         <SignUpForm setOpenSignUpModal={setOpenUpdateAccountModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} loggedInCustomer={loggedInCustomer}/>
                     </Box>
                 </Modal>

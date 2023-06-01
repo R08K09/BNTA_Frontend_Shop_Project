@@ -13,21 +13,9 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId, lo
     const handleToggleLogInModal = () => setOpenLogInModal(!openLogInModal);
     const handleToggleSignUpModal = () => setOpenSignUpModal(!openSignUpModal);
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'green',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
-
     const filteredListOfCustomers = listOfCustomers.filter((customer) => !customer.deactivated)
 
-    const customerComponents = filteredListOfCustomers.map((customer) => <Customer customer={customer} setLoggedInUserId={setLoggedInUserId} setOpenLogInModal={setOpenLogInModal}/>)
+    const customerComponents = filteredListOfCustomers.map((customer) => <Customer className = "customer" customer={customer} setLoggedInUserId={setLoggedInUserId} setOpenLogInModal={setOpenLogInModal}/>)
 
 
     return ( 
@@ -39,9 +27,9 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId, lo
                 open={openLogInModal}
                 onClose={handleToggleLogInModal}
                 className="log-in-modal">
-                <Box sx={style}>
+                <Box className="modal">
                     <h2>Select User or Sign Up</h2>
-                    <button onClick={handleToggleLogInModal}>X</button>
+                    <button className="x-button" onClick={handleToggleLogInModal}>X</button>
                     {customerComponents}
                     <button onClick={handleToggleSignUpModal}>Sign Up</button>
                     <Modal
@@ -49,8 +37,8 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId, lo
                         onClose={handleToggleSignUpModal}
                         className="sign-up-modal"
                         >
-                            <Box sx={style}>
-                                <button onClick={handleToggleSignUpModal}>X</button>
+                            <Box className="modal">
+                                <button className="x-button" onClick={handleToggleSignUpModal}>X</button>
                                 <SignUpForm setOpenSignUpModal={setOpenSignUpModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
                             </Box>
                     </Modal>

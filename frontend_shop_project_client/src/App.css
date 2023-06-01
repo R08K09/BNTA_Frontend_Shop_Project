@@ -295,3 +295,26 @@ footer a, h2 {
   display: flex;
   align-self: end
 }
+.modal{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        background-color: red;
+        border: 2px solid #000;
+        box-shadow: 24;
+        backdrop-filter: blur(8px);
+        padding: 3%;
+        z-index: +101;
+        height: 60%;
+}
+.customer-button{
+  color: white;
+  background-color: black;
+}
+.x-button{
+  position: fixed;
+  top: 5%;
+  left: 3%;
+}

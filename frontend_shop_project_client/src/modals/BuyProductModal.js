@@ -28,24 +28,14 @@ const BuyProductModal = ({vehicle, loggedInUserId, listOfCustomers, setListOfCus
         handleToggleBuyProductModal();
     })
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'background.paper',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
+   
     const displayPrice = (vehicle.price/100).toLocaleString();
     return ( 
         <>
         <button onClick={handleToggleBuyProductModal}>Buy</button>
         <Modal className = "buy-product-modal" open = {openBuyProductModal} onClose={handleToggleBuyProductModal}>
-            <Box sx={style}>
-                <button onClick={handleToggleBuyProductModal}>X</button>
+            <Box className="modal">
+                <button className="x-button" onClick={handleToggleBuyProductModal}>X</button>
                 <h2>Please confirm your order:</h2>
                 <p>name: {vehicle.name}</p>
                 <p>£{displayPrice}.00</p>
