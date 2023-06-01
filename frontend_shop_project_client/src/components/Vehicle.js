@@ -19,6 +19,21 @@ const Vehicle = ({vehicle, loggedInUserId, listOfCustomers, setListOfCustomers})
 
 
     const displayPrice = (vehicle.price/100).toLocaleString();
+
+
+    let handlePurchaseAvailability;
+
+    if(vehicle.sold){
+        handlePurchaseAvailability = <p>Sold Out</p>;
+    }
+    else if(loggedInUserId <= 0){
+        handlePurchaseAvailability = <p>Please log in to purchase</p>;
+    }
+    else {
+        handlePurchaseAvailability = <BuyProductModal vehicle={vehicle} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
+    }
+    
+    
     return (  
         <>
             {inspecting ? 
@@ -27,7 +42,7 @@ const Vehicle = ({vehicle, loggedInUserId, listOfCustomers, setListOfCustomers})
                 <h3>{vehicle.name}</h3>
                 <p>Price: £{displayPrice}.00</p>
                 <p>Colour: {vehicle.colour}</p>
-                <BuyProductModal vehicle={vehicle} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
+                {handlePurchaseAvailability}
             </div>
             : 
             <div className="product-not-inspected">
