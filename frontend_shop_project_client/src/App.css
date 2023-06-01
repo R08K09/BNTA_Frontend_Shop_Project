@@ -2,17 +2,46 @@ html {
   scroll-behavior: smooth;
 }
 
+hr {
+  width: 80%;
+}
 .header {
   position: fixed;
   top: 0%;
   width: 100%;
-  background-color: beige;
+  background-color: white;
   z-index: +100;
   padding: 20px;
 }
+
+#search-input-bar {
+  width: 300px;
+  height: 35px;
+  padding-left: 20px;
+  border-radius: 18px;
+  font-size: large;
+  font-style: italic;
+}
+
+.header-search{
+  justify-content: center;
+}
+.header-search > button {
+  width: 100px;
+  height: 40px;
+  border-radius: 18px;
+  color: black;
+  background-color: white;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+
 .vehicle-image {
-  width: 400px;
-  height: 300px;
+  width: 600px;
+  height: 500px;
+  border-radius: 18px;
 }
 
 
@@ -22,12 +51,17 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 5%;
+  padding-top: 100px;
+  background-color: rgb(1, 1, 28) ;
+
+  /* background-color: rgb(102, 99, 99) ; */
+  
 }
 
 .slide-vehicle-image {
-  width: 1000px;
-  height: 600px;
+  width: 1800px;
+  height: 1000px;
   border-radius: 10px;
 }
 .right-arrow {
@@ -35,7 +69,7 @@ html {
   top: 50%;
   right: 32px;
   font-size: 3rem;
-  color: #000;
+  color: white;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -45,7 +79,7 @@ html {
   top: 50%;
   left: 32px;
   font-size: 3rem;
-  color: #000;
+  color: white;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -60,48 +94,204 @@ html {
   transform: scale(1.08);
 }
 
+.vehicle-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 30px;
+}
 
+.vehicle-slider h2, p {
+  font-size: xx-large;
+  color: white;
+}
+
+.vehicle-list h2 {
+  font-size: xxx-large;
+  margin-left: 30px;
+  text-decoration: underline;
+  text-decoration-color: grey;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.vehicle-list h3 {
+  color: white;
+}
 
 #carList {
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 300px;
+  scroll-margin-top: 400px;
+  height: 700px;
 }
 
 #boatList {
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 300px;
+  scroll-margin-top: 400px;
+  height: 700px;
 }
 
 #planeList {
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 300px;
+  scroll-margin-top: 400px;
+  height: 700px;
 }
 
 .header-container {
   display: flex;
   align-items: center;
   position: relative;
- 
+}
+
+
+body, header {
+  background-color: rgb(23, 26, 28);
+  width: 100%;
+}
+
+
+header {
+  background-color: rgb(23, 26, 28);
+}
+
+p, h2, h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large
+}
+
+a {
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: xxx-large;
+  font-style: italic;
+}
+
+.company-tags {
+  display: flex;
+  align-items: center;
+  
 }
 
 .customer-tags {
   position: absolute;
   right: 0;
-  margin-right: 10px;
+  margin-right: 3%;
 }
+
 .customer-tags button {
   margin-right: 10px;
+  width: 200px;
+  height: 40px;
+  border-radius: 18px;
+  color: black;
+  background-color: rgb(224, 217, 217);
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: large;
 }
-
+ 
 .nav-bar {
   display: flex;
+  align-items: center;
   justify-content: space-around;
+  font-size: large;
+  font-weight: bold;
+  padding: 30px;
+  border-style: outset;
+  border-color: grey;
+  margin-right: 2%;
 }
 
+.nav-bar a {
+  text-decoration: none;
+  font-size: larger;
+  color: #000;
+}
+header {
+  margin-bottom: 0%;
+  background-color: blue;
+}
 
 .slider {
   margin: 2%;
+}
+
+.product-inspected button {
+  margin-right: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 18px;
+  color: black;
+  background-color: white;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+footer a, h2 {
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+#footer-nav {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  
+  /* align-items: center; */
+}
+
+#newsletter-form input {
+  width: 300px;
+  height: 35px;
+  padding-left: 20px;
+  border-radius: 18px;
+  font-size: large;
+}
+
+#newsletter-form button {
+  margin-right: 10px;
+  width: 120px;
+  height: 40px;
+  border-radius: 18px;
+  color: black;
+  background-color: white;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.footer-logo {
+    display: flex;
+  }
+
+.footer-bottom {
+  display: flex;
+  align-self: end
 }

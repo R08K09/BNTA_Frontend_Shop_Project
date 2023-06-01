@@ -14,6 +14,7 @@ const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomer
     const [sliderValue, setSliderValue] = useState(100);
 
     const [mostExpensiveVehiclePrice, setMostExpensiveVehiclePrice] = useState(0);
+    
 
     const fetchVehicles  = async () => {
         const response = await fetch("http://localhost:8080/products");
@@ -47,8 +48,9 @@ const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomer
             {/* <VehicleForm setMaxPrice={setMaxPrice} sliderValue={sliderValue}
             maxVehiclePrice={maxVehiclePrice} maxPrice={maxPrice}/> */}
             <VehicleSlider sliderValue={sliderValue} setSliderValue={setSliderValue}  filterMaxPrice={filterMaxPrice}/>
+            <hr/>
             <VehicleList listOfVehicles={listOfVehicles} vehicleSearch={vehicleSearch} filterMaxPrice={filterMaxPrice} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
-            <p>Hi from container</p>
+          <hr/>
         </div>
      );
 }

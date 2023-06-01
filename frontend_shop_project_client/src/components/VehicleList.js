@@ -3,7 +3,7 @@ import Vehicle from "./Vehicle";
 const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUserId, listOfCustomers, setListOfCustomers}) => {
 
 
-    const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.startsWith(vehicleSearch) && vehicle.price <= filterMaxPrice);
+    const filteredVehicleList = listOfVehicles.filter((vehicle) => vehicle.name.includes(vehicleSearch) && vehicle.price <= filterMaxPrice);
     
 
 
@@ -32,7 +32,7 @@ const VehicleList = ({listOfVehicles, vehicleSearch, filterMaxPrice, loggedInUse
 
 
     return ( 
-        <div>
+        <div className="vehicle-list">
             <h2>Cars</h2>
                 <section id="carList">
                     {carComponents}

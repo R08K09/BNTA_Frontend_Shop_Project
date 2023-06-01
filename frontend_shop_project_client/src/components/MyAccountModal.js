@@ -24,7 +24,7 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers})
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: 400,
-        bgcolor: 'background.paper',
+        bgcolor: 'green',
         border: '2px solid #000',
         boxShadow: 24,
         p: 4,
@@ -32,7 +32,7 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers})
 
     return (
         <>
-        <h2>Welcome back {loggedInCustomer.name}</h2>
+        <h2>Welcome back, {loggedInCustomer.name}</h2>
         <button onClick={handleToggleMyAccountModal}>My Account</button>
         <Modal
             open={openMyAccountModal}
@@ -41,9 +41,11 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers})
             
             <Box sx={style}>
                 <button onClick={handleToggleMyAccountModal}>X</button>
-                <p>{loggedInCustomer.name}</p>
-                <p>{loggedInCustomer.email}</p>
-                <p>{loggedInCustomer.discountCategory}</p>
+                <h2>Account Details:</h2>
+                <p>Name: {loggedInCustomer.name}</p>
+                <p>Email: {loggedInCustomer.email}</p>
+                <p>Valid Discount: {loggedInCustomer.discountCategory}</p>
+                <h2>Completed Orders:</h2>
                 {customerProductsList}
 
                 <button onClick={handleToggleUpdateAccountModal}>Update Account Details</button>

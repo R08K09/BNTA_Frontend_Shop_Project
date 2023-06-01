@@ -22,9 +22,10 @@ const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCust
             <div className="header-container">
 
                 <div className="company-tags">
-                    {/* logo here */}
-                    <h1>CompanyNameHere</h1>
+                    <img src="https://static.vecteezy.com/system/resources/previews/020/108/970/original/tfl-flat-accounting-logo-design-on-white-background-tfl-creative-initials-growth-graph-letter-logo-concept-tfl-business-finance-logo-design-vector.jpg" alt="tfl logo" width="150px"/>
+                    <h1>Travel. Freedom. Luxury </h1>
                 </div>
+        
                 <div className="customer-tags">
                     <LogInModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} setLoggedInUserId={setLoggedInUserId} loggedInUserId={loggedInUserId}/>
                     {loggedInUserId > 0 ? <MyAccountModal 
@@ -38,8 +39,8 @@ const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCust
                     <a href="#planeList">Planes</a>
                     <a href="#boatList">Boats</a>
 
-                    <div className="search_input_bar">
-                        <input 
+                    <div className="header-search">
+                        <input id="search-input-bar"
                             type="text"
                             placeholder="Search for Vehicle"
                             onInput={handleSearchInput}/>

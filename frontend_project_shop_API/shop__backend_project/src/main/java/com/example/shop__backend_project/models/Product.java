@@ -29,7 +29,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    @JsonIgnoreProperties({"products"})
+    @JsonIgnoreProperties({"productsZ"})
     private Customer customer;
 
 //    @OneToOne

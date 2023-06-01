@@ -118,18 +118,18 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
                 type="text"
                 name="name"
                 value={newCustomer.name}
-                placeholder={loggedInCustomer ? "update name" : "enter name"}
+                placeholder={loggedInCustomer ? "Update your name" : "Enter your name"}
                 onChange={handleChange}
             />
             {loggedInCustomer ? 
-            <p>{loggedInCustomer.email}</p>
+            <p>Email: {loggedInCustomer.email}</p>
             
             :
             <input 
                 type="email"
                 name="email"
                 value={newCustomer.email}
-                placeholder="enter email"
+                placeholder="Enter email"
                 onChange={handleChange}
             />}
 

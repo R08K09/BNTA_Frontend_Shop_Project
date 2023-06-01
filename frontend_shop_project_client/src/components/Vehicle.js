@@ -33,7 +33,7 @@ const Vehicle = ({vehicle, loggedInUserId, listOfCustomers, setListOfCustomers})
             <div className="product-not-inspected">
                 {imageComponent}
                 <h3>{vehicle.name}</h3>
-                {vehicle.sold ? <h1>Sold</h1> : <></>}
+                {vehicle.sold ? <h3>Out of Stock</h3> : <></>}
             </div>
             }
         </>
