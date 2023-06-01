@@ -17,30 +17,30 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
 
     const [error, setError] = useState("");
 
-    const handleValidationNewUser = () => {
-        let errorMessage = "";
-        if (listOfCustomers.find((customer) => customer.email === newCustomer.email)) {
-            errorMessage = "This email is already in use";
-        } if (newCustomer.email === "" || newCustomer.name === "") {
-            errorMessage = "Please complete all fields";
-            console.log(errorMessage);
-        } 
-        setError(errorMessage);
-        // return errorMessage;
-    }
+    // const handleValidationNewUser = () => {
+    //     let errorMessage = "";
+    //     if (listOfCustomers.find((customer) => customer.email === newCustomer.email)) {
+    //         errorMessage = "This email is already in use";
+    //     } if (newCustomer.email === "" || newCustomer.name === "") {
+    //         errorMessage = "Please complete all fields";
+    //         
+    //     } 
+    //     setError(errorMessage);
+    //     // return errorMessage;
+    // }
 
-    const handleValidationUpdateUser = () => {
-        let errorMessage = "";
-        if (newCustomer.name === "") {
-            errorMessage = "Please enter name";
-        }
-        setError(errorMessage);
-        // return errorMessage;
-    }
+    // const handleValidationUpdateUser = () => {
+    //     let errorMessage = "";
+    //     if (newCustomer.name === "") {
+    //         errorMessage = "Please enter name";
+    //     }
+    //     setError(errorMessage);
+    //     // return errorMessage;
+    // }
 
-    const handleValidation = () => {
-         {loggedInCustomer ? handleValidationUpdateUser() : handleValidationNewUser()}
-    }
+    // const handleValidation = () => {
+    //      {loggedInCustomer ? handleValidationUpdateUser() : handleValidationNewUser()}
+    // }
 
 
     const discountCategories = [
@@ -105,11 +105,27 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if (!handleValidation()) {
-        loggedInCustomer ? updateCustomer(newCustomer) : postCustomer(newCustomer);
-        // POST request to create new customer
-        // close modals
-        setOpenSignUpModal(false);
+        let errorMessage = "";
+        // check validation for updateUser
+        if(loggedInCustomer) {
+            if (newCustomer.name === "") {
+                errorMessage = "Please enter name";
+            }
+        }
+        // check validation for newUser
+        else {
+            if (listOfCustomers.find((customer) => customer.email === newCustomer.email)) {
+                errorMessage = "This email is already in use";
+            } if (newCustomer.email === "" || newCustomer.name === "") {
+                errorMessage = "Please complete all fields";
+            }  
+        }
+        // POST/PATCH if error message is not blank
+        if (errorMessage === "") {
+            loggedInCustomer ? updateCustomer(newCustomer) : postCustomer(newCustomer);
+            setOpenSignUpModal(false);
+        }else{
+            setError(errorMessage);
         }
     }
 
@@ -127,10 +143,9 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
     };
 
     
-    // console.log(listOfCustomers);
+    
 
     const updateCustomer = (newCustomer) => {
-        console.log(JSON.stringify(newCustomer));
         fetch(`http://localhost:8080/customers/${loggedInCustomer.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -146,7 +161,7 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
                 }
         })
         setListOfCustomers(updatedCustomerList);
-        console.log(updatedCustomerList);
+        
     })
 }
 
