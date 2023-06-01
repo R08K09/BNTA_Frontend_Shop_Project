@@ -15,6 +15,34 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
             products: []
         }))
 
+    const [error, setError] = useState("");
+
+    const handleValidationNewUser = () => {
+        let errorMessage = "";
+        if (listOfCustomers.find((customer) => customer.email === newCustomer.email)) {
+            errorMessage = "This email is already in use";
+        } if (newCustomer.email === "" || newCustomer.name === "") {
+            errorMessage = "Please complete all fields";
+            console.log(errorMessage);
+        } 
+        setError(errorMessage);
+        // return errorMessage;
+    }
+
+    const handleValidationUpdateUser = () => {
+        let errorMessage = "";
+        if (newCustomer.name === "") {
+            errorMessage = "Please enter name";
+        }
+        setError(errorMessage);
+        // return errorMessage;
+    }
+
+    const handleValidation = () => {
+         {loggedInCustomer ? handleValidationUpdateUser() : handleValidationNewUser()}
+    }
+
+
     const discountCategories = [
         {
             id: 0,
@@ -77,10 +105,12 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        if (!handleValidation()) {
         loggedInCustomer ? updateCustomer(newCustomer) : postCustomer(newCustomer);
         // POST request to create new customer
         // close modals
         setOpenSignUpModal(false);
+        }
     }
 
 
@@ -120,39 +150,43 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
     })
 }
 
-
     return ( 
-        <form onSubmit={handleFormSubmit} >
-            <input 
-                type="text"
-                name="name"
-                value={newCustomer.name}
-                placeholder={loggedInCustomer ? "Update your name" : "Enter your name"}
-                onChange={handleChange}
-            />
-            {loggedInCustomer ? 
-            <p>Email: {loggedInCustomer.email}</p>
-            
-            :
-            <input 
-                type="email"
-                name="email"
-                value={newCustomer.email}
-                placeholder="Enter email"
-                onChange={handleChange}
-            />}
+        <>
+            <form onSubmit={handleFormSubmit} >
+                <input 
+                    type="text"
+                    name="name"
+                    value={newCustomer.name}
+                    placeholder={loggedInCustomer ? "Update your name" : "Enter your name"}
+                    onChange={handleChange}
+                />
+                {loggedInCustomer ? 
+                <p>Email: {loggedInCustomer.email}</p>
+                
+                :
+                <input 
+                    type="email"
+                    name="email"
+                    value={newCustomer.email}
+                    placeholder="Enter email"
+                    onChange={handleChange}
+                />}
 
-            <select 
-                onChange={handleDiscountCategoryChange}
-                name="Discount Category"
-                value={newCustomer.discountCategory}
-            >
-                {/* <option value="select-category"> Select a Category </option> */}
-                {discountOptions}
-            </select>
+                <select 
+                    onChange={handleDiscountCategoryChange}
+                    name="Discount Category"
+                    value={newCustomer.discountCategory}
+                >
+                    {/* <option value="select-category"> Select a Category </option> */}
+                    {discountOptions}
+                </select>
 
-            <button type="submit">{loggedInCustomer ? "Update" : "Sign Up"}</button>
-        </form>
+                <button type="submit">{loggedInCustomer ? "Update" : "Sign Up"}</button>
+                
+            </form>
+
+            <p>{error}</p>
+        </>
      );
 }
  
