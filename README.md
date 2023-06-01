@@ -7,7 +7,7 @@ By utilising many tools and features, we were able to design and create an inter
 
 
 ## Diagrams
-### Wireframe
+### Wireframe Diagram
 The wireframe represents the skeleton of our website and showcases our initial planning, including possible features and extensions.
 ![Wireframe diagram](FrontEnd_wireframe.png)
 
@@ -16,8 +16,18 @@ We could create one - would showcase state and props
 
 
 ## Tech Stack
+* IntelliJ IDEA (JDK 17)
+* PostgresSQL
+* Postico
+* Postman
+* Spring Boot
+* React
 
-
+Programming languages used:
+* Java (server-side)
+* Javascript (client-side)
+* HTML (client-side)
+* CSS (client-side)
 
 
 ## Setup Instructions
