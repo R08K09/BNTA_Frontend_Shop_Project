@@ -1,12 +1,19 @@
 import { useState } from "react";
 
 const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, loggedInCustomer}) => {
-    const [newCustomer, setNewCustomer] = useState({
-        name: "",
-        email: "",
-        discountCategory: null,
-        products:[]
-    })
+    const [newCustomer, setNewCustomer] = useState(
+        (loggedInCustomer ? { 
+            name: "",
+            email: loggedInCustomer.email,
+            discountCategory: loggedInCustomer.discountCategory,
+            products:loggedInCustomer.products
+        } : 
+        {
+            name : "",
+            email: "",
+            discountCategory: null,
+            products: []
+        }))
 
     const discountCategories = [
         {
@@ -57,7 +64,7 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
         const selectedCategory = discountCategories.find(discount => {
             return discount.category === categoryName;
         });
-        if(selectedCategory.category !== "none"){
+        if(selectedCategory.category !== "none" ){
             const copiedCustomer = {...newCustomer};
             copiedCustomer.discountCategory = selectedCategory.category;
             setNewCustomer(copiedCustomer);
@@ -93,6 +100,7 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
     console.log(listOfCustomers);
 
     const updateCustomer = (newCustomer) => {
+        console.log(newCustomer)
         fetch(`http://localhost:8080/customers/${loggedInCustomer.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
