@@ -30,6 +30,7 @@ public class CustomerService {
         Customer updatedCustomer = customerRepository.findById(id).get();
         updatedCustomer.setName(customer.getName());
         updatedCustomer.setEmail(customer.getEmail());
+        updatedCustomer.setDiscountCategory(customer.getDiscountCategory());
         return customerRepository.save(updatedCustomer);
     }
     public void deleteCustomer (Long id){
