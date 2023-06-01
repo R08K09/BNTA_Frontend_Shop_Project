@@ -1,6 +1,7 @@
+import LogInModal from "../modals/LogInModal";
+import MyAccountModal from "../modals/MyAccountModal";
 
-import LogInModal from "../components/LogInModal";
-import MyAccountModal from "../components/MyAccountModal";
+
 
 const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCustomers, setLoggedInUserId, loggedInUserId}) => {
 

@@ -1,7 +1,7 @@
 import { Modal } from "@mui/base";
 import { Box } from "@mui/material";
 import { useState } from "react";
-import SignUpForm from "./SignUpForm";
+import SignUpForm from "../components/SignUpForm";
 import DeactivateAccountModal from "./DeactivateAccountModal";
 
 const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers, setLoggedInUserId}) => {

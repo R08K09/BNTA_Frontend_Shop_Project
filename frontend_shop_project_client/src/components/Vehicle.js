@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 import {images} from "../images";
-import BuyProductModal from "./BuyProductModal";
+import BuyProductModal from "../modals/BuyProductModal";
+
 
 const Vehicle = ({vehicle, loggedInUserId, listOfCustomers, setListOfCustomers}) => {
 
