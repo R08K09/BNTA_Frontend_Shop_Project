@@ -126,7 +126,7 @@ hr {
   align-items: center;
   justify-content: space-around;
   scroll-margin-top: 400px;
-  height: 700px;
+  height:800px;
 }
 
 #boatList {
@@ -134,7 +134,7 @@ hr {
   align-items: center;
   justify-content: space-around;
   scroll-margin-top: 400px;
-  height: 700px;
+  height: 800px;
 }
 
 #planeList {
@@ -142,7 +142,7 @@ hr {
   align-items: center;
   justify-content: space-around;
   scroll-margin-top: 400px;
-  height: 700px;
+  height: 800px;
 }
 
 .header-container {
