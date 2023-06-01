@@ -45,7 +45,7 @@ const Header = ({fetchVehicles, setVehicleSearch, listOfCustomers, setListOfCust
                             type="text"
                             placeholder="Search for Vehicle"
                             onInput={handleSearchInput}/>
-                        <button onClick={fetchVehicles}>Search</button>
+                        
                      </div>
             
                 </nav>

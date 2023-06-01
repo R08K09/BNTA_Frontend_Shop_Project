@@ -225,8 +225,12 @@ h1 {
 
 .nav-bar a {
   text-decoration: none;
-  font-size: larger;
+  font-size: xx-large;
   color: #000;
+}
+
+.nav-bar a:hover{
+  color: white;
 }
 header {
   margin-bottom: 0%;
@@ -248,6 +252,12 @@ header {
   font-weight: bold;
   font-size: large;
 }
+
+/* .product-inspected :hover, */
+.product-not-inspected img:hover{
+  opacity: 30%;
+}
+
 
 footer {
   margin: 3%;
