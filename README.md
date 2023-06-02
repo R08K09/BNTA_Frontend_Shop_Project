@@ -54,13 +54,14 @@ IntelliJ will need following dependencies to run the server-side application:
 
 ## Future Extensions
 If we had additional time, we would have liked to add the following features to our project:
-* Update functionality that would apply the customer's discount to the products they're buying
-* Implement sliders for each vehicle category where we would showcase 3 vehicles at a time and rotate through the rest
-* Create routes so that customers can navigate between pages (currently only 1 page)
-* Attach some functionality to the Newsletter sign-up form in the footer
+* Update functionality that would apply the customer's discount to the products they're buying.
+* Implement sliders for each vehicle category where we would showcase 3 vehicles at a time and rotate through the rest.
+* Create routes so that customers can navigate between pages (currently only 1 page).
+* Craete an admin that can add or remove vehicles from stock/website.
+* Attach some functionality to the Newsletter sign-up form in the footer.
 * Implement Order numbers to purchases made as well as stock numbers that should change in value upon completion of purchases.
 * Separate the CSS editing for each modal so that the size of each could be adjusted according to the information in them. At the moment they are all large and the same size. Also can figure out how to blur the background behind the modals.
-* Adding media responsiveness for use on different sized screens
+* Adding media responsiveness for use on different sized screens.
 
 
 ## Collaborators
