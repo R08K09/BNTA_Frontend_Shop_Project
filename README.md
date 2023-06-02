@@ -26,7 +26,7 @@ We could create one - would showcase state and props
 
 Programming languages used:
 * Java (server-side)
-* Javascript (client-side)
+* Javascript --> React JS (client-side)
 * HTML (client-side)
 * CSS (client-side)
 
@@ -60,6 +60,9 @@ If we had additional time, we would have liked to add the following features to 
 * Update functionality that would apply the customer's discount to the products they're buying
 * Implement sliders for each vehicle category where we would showcase 3 vehicles at a time and rotate through the rest
 * Create routes so that customers can navigate between pages (currently only 1 page)
+* Attach some functionality to the Newsletter sign-up form in the footer
+* Implement Order numbers to purchases made as well as stock numbers that should change in value upon completion of purchases.
+* separate the CSS editing for each modal so that the size of each could be adjusted according to the information in them. At the moment they are all large and the same size. Also can figure out how to blur the background behind the modals.
 
 ## Collaborators
 
