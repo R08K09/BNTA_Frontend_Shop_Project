@@ -57,7 +57,7 @@ If we had additional time, we would have liked to add the following features to 
 * Update functionality that would apply the customer's discount to the products they're buying.
 * Implement sliders for each vehicle category where we would showcase 3 vehicles at a time and rotate through the rest.
 * Create routes so that customers can navigate between pages (currently only 1 page).
-* Craete an admin that can add or remove vehicles from stock/website.
+* Craete an admin that can add, update or remove vehicles from stock/website.
 * Add password functionaility because currently you can access any account.
 * Attach some functionality to the Newsletter sign-up form in the footer.
 * Implement Order numbers to purchases made as well as stock numbers that should change in value upon completion of purchases.
