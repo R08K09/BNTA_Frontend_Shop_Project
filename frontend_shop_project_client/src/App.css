@@ -46,6 +46,8 @@ hr {
 
 .vehicle-image:hover {
   opacity: 30%;
+  width: 650px;
+  height: 550px;
 }
 
 .hero-slideshow {
@@ -217,6 +219,10 @@ h1 {
   font-weight: bold;
   font-size: large;
 }
+.customer-tags button:hover {
+  width: 250px;
+  height: 50px;
+}
  
 .nav-bar {
   display: flex;
@@ -238,6 +244,7 @@ h1 {
 
 .nav-bar a:hover {
   color: white;
+  font-size: xx-large;
 }
 
 footer a:hover {
@@ -310,6 +317,11 @@ footer a, h2 {
   margin-left: 10px;
   font-weight: bold;
   font-size: large;
+}
+#newsletter-form button:hover {
+  height: 50px;
+  width: 120px;
+  font-size: larger;
 }
 
 .footer-logo {
