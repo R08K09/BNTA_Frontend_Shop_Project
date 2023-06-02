@@ -44,6 +44,9 @@ hr {
   border-radius: 18px;
 }
 
+.vehicle-image:hover {
+  opacity: 30%;
+}
 
 .hero-slideshow {
   position: relative;
@@ -125,24 +128,24 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 400px;
-  height: 700px;
+  scroll-margin-top: 500px;
+  height: 800px;
 }
 
 #boatList {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 400px;
-  height: 700px;
+  scroll-margin-top: 500px;
+  height: 800px;
 }
 
 #planeList {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 400px;
-  height: 700px;
+  scroll-margin-top: 500px;
+  height: 800px;
 }
 
 .header-container {
@@ -232,7 +235,15 @@ h1 {
   font-size: x-large;
   color: #000;
 }
- 
+
+.nav-bar a:hover {
+  color: white;
+}
+
+footer a:hover {
+  font-weight: bold;
+
+}
 header {
   margin-bottom: 0%;
   /* background-color: blue; */
