@@ -9,7 +9,7 @@ By utilising many tools and features, we were able to design and create an inter
 ## Diagrams
 ### Wireframe Diagram
 The wireframe represents the skeleton of our website and showcases our initial planning, including possible features and extensions.
-![Wireframe diagram](FrontEnd_wireframe.png)
+![Wireframe diagram](Wireframe.png)
 
 ### Components Diagram
 We could create one - would showcase state and props
