@@ -15,8 +15,8 @@ hr {
 }
 
 #search-input-bar {
-  width: 300px;
-  height: 35px;
+  width: 500px;
+  height: 50px;
   padding-left: 20px;
   border-radius: 18px;
   font-size: large;
@@ -125,24 +125,24 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 500px;
-  height:800px;
+  scroll-margin-top: 400px;
+  height: 700px;
 }
 
 #boatList {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 500px;
-  height: 800px;
+  scroll-margin-top: 400px;
+  height: 700px;
 }
 
 #planeList {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  scroll-margin-top: 500px;
-  height: 800px;
+  scroll-margin-top: 400px;
+  height: 700px;
 }
 
 .header-container {
@@ -175,6 +175,9 @@ p, h2, h3, li{
   font-size: x-large
 }
 
+li {
+  font-weight: bold;
+}
 a {
   font-family: 'Courier New', Courier, monospace;
   
@@ -184,6 +187,7 @@ h1 {
   font-family: 'Courier New', Courier, monospace;
   font-size: xxx-large;
   font-style: italic;
+  color: #003049;
 }
 
 .company-tags {
@@ -225,13 +229,10 @@ h1 {
 
 .nav-bar a {
   text-decoration: none;
-  font-size: xx-large;
+  font-size: x-large;
   color: #000;
 }
-
-.nav-bar a:hover{
-  color: white;
-}
+ 
 header {
   margin-bottom: 0%;
   /* background-color: blue; */
@@ -253,14 +254,7 @@ header {
   font-size: large;
 }
 
-/* .product-inspected :hover, */
-.product-not-inspected img:hover{
-  opacity: 30%;
-}
-
-
 footer {
-  margin: 3%;
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -321,14 +315,16 @@ footer a, h2 {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
-        background-color: #83c5be;
+        /* background-color: #83c5be; */
+        /* background-image: linear-gradient(to bottom right, #62b6cb, #1b4965); */
+        background-color: transparent;
         border: 2px solid #000;
-        border-radius: 10px;
+        border-radius: 30px;
         box-shadow: 24;
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(100px);
         padding: 3%;
         z-index: +101;
-        height: 60%;    
+        height: 60%;
 }
 
 .customer-components {
@@ -343,9 +339,11 @@ footer a, h2 {
 
 .customer-button{
   color: white;
-  background-color: #52796f ;
-  border-radius: 18px;
+  /* background-color: #52796f ; */
+  background-color: #003554;
+  border-radius: 30px;
   margin: 1%;
+  padding: 2%;
 }
 
 .customer-button p {
@@ -363,14 +361,25 @@ footer a, h2 {
   font-weight: bold;
   font-size: large;
   margin: 3%;
-
 }
-.x-button{
+
+#login-signup-heading {
+  font-size: xx-large;
+}
+
+.sign-up-button-section {
+  display: flex;
+  justify-content: center;
+}
+.x-button {
   position: fixed;
   top: 5%;
   left: 3%;
   width: 50px;
   background-color: white;
+  font-weight: bold;
+  font-size: large;
+  padding: 5px;
 }
 
 .sign-up-form {
@@ -381,8 +390,8 @@ footer a, h2 {
 }
 
 .sign-up-form input, .sign-up-form select, .sign-up-form button {
-  width: 300px;
-  height: 35px;
+  width: 700px;
+  height: 60px;
   padding-left: 20px;
   margin: 1%;
   border-radius: 18px;
@@ -396,11 +405,13 @@ footer a, h2 {
 
 .confirm-button {
   width: 300px;
-  height: 35px;
+  height: 50px;
   padding-left: 20px;
   margin: 1%;
   border-radius: 18px;
   font-size: large;
+  background-color: white;
+  font-weight: bold;
 }
 
 .confirm-order-details, .confirm-order-details p , .confirm-order-details h2 {
@@ -416,10 +427,15 @@ footer a, h2 {
 }
 .confirm-order-details h2 {
   font-weight: bold;
+  font-size: xx-large;
+}
+
+.confirm-order-details {
+  margin-top: 10%;
 }
 
 #welcome-message {
-  color: black;
+  color: #003049;
 }
 
 .my-account-details {
@@ -431,9 +447,48 @@ footer a, h2 {
 .my-account-details p {
   font-weight: bold;
 }
+
+.my-account-details h2 {
+  font-size: xx-large;
+  font-style: italic;
+}
+
 .my-account-buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+#enter-your-details-heading {
+  color: #000;
+  font-size: xx-large;
+}
+
+.signup-update-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.display-deactivation-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-deactivation-page p {
+  font-size: xx-large;
+}
+
+.display-deactivation-page h2 {
+  font-size: xxx-large;
+  color: black;
+  text-decoration: underline;
+}
+
+#red-confirm-button {
+  color: red;
 }

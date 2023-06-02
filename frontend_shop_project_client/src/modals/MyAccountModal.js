@@ -43,7 +43,7 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers, 
                     <h2>Account Details:</h2>
                     <p>Name: {loggedInCustomer.name}</p>
                     <p>Email: {loggedInCustomer.email}</p>
-                    <p>Valid Discount: {loggedInCustomer.discountCategory}</p>
+                    <p>Applied Discount Category: {loggedInCustomer.discountCategory}</p>
                     <h2>Completed Orders:</h2>
                     {customerProductsList}
                 </div>

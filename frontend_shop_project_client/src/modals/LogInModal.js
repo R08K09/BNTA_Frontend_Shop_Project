@@ -28,12 +28,14 @@ const LogInModal  = ({listOfCustomers, setListOfCustomers, setLoggedInUserId, lo
                 onClose={handleToggleLogInModal}
                 className="log-in-modal">
                 <Box className="modal">
-                    <h2>Select User or Sign Up</h2>
+                    <h2 id="login-signup-heading">Select User or Sign Up</h2>
                     <button className="x-button" onClick={handleToggleLogInModal}>X</button>
                     <div className="customer-components">
                         {customerComponents}
                     </div>
-                    <button className="sign-up-button" onClick={handleToggleSignUpModal}>Sign Up</button>
+                    <div className="sign-up-button-section">
+                     <button className="sign-up-button" onClick={handleToggleSignUpModal}>Sign Up</button>
+                    </div>
                     <Modal
                         open={openSignUpModal}
                         onClose={handleToggleSignUpModal}

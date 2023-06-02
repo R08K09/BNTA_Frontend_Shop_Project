@@ -19,12 +19,15 @@ const DeactivateAccountModal = ({listOfCustomers, setListOfCustomers, loggedInCu
             <button className="confirm-button" onClick={handleToggleDeactivateAccountModal}>Deactivate Account</button>
             <Modal className="deactivate-account-modal" open = {openDeactivateAccountModal} onClose = {handleToggleDeactivateAccountModal} >
                 <Box className="modal">
-                    <h2>Please confirm you want to deactivate your account</h2>
-                    <p>{loggedInCustomer.name}</p>
-                    <p>{loggedInCustomer.email}</p>
-                    
-                    <button className="confirm-button" onClick={deactivateAccount}>Confirm</button>
-                    <button className="confirm-button" onClick={handleToggleDeactivateAccountModal}>Cancel</button>
+                    <div className="display-deactivation-page">
+                        <h2>Please confirm you want to deactivate your account</h2>
+                        <p>Name: {loggedInCustomer.name}</p>
+                        <p>Email: {loggedInCustomer.email}</p>
+                        <p><i>Once deactivated, you cannot retrieve this account.</i></p>
+                        
+                        <button className="confirm-button" id="red-confirm-button" onClick={deactivateAccount}>Confirm</button>
+                        <button className="confirm-button" onClick={handleToggleDeactivateAccountModal}>Cancel</button>
+                    </div>
                 </Box>
             </Modal>
 

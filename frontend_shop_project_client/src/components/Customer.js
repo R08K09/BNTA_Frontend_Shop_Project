@@ -10,7 +10,7 @@ const Customer = ({customer, setLoggedInUserId, setOpenLogInModal}) => {
         <>
             <button onClick={handleUserSelection} className="customer-button">
                 <p>{customer.name}</p>
-                <p>{customer.discountCategory}</p>
+                <p><i>{customer.discountCategory}</i></p>
                 <p>{customer.email}</p>
             </button>
         </>

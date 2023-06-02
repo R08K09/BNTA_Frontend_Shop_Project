@@ -168,38 +168,40 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
     return ( 
         <>
             <form className="sign-up-form" onSubmit={handleFormSubmit} >
-                <h2>Please enter your details</h2>
-                <input 
-                    type="text"
-                    name="name"
-                    value={newCustomer.name}
-                    placeholder={loggedInCustomer ? "Update your name" : "Enter your name"}
-                    onChange={handleChange}
-                />
-                {loggedInCustomer ? 
-                <p>Email: {loggedInCustomer.email}</p>
-                
-                :
-                <input 
-                    type="email"
-                    name="email"
-                    value={newCustomer.email}
-                    placeholder="Enter email"
-                    onChange={handleChange}
-                />}
+                <h2 id="enter-your-details-heading">Please enter your updated details below:</h2>
+                <div className="signup-update-form">
+                    <input 
+                        type="text"
+                        name="name"
+                        value={newCustomer.name}
+                        placeholder={loggedInCustomer ? "Update your name" : "Enter your name"}
+                        onChange={handleChange}
+                    />
+                    {loggedInCustomer ? 
+                    <p>Email: {loggedInCustomer.email}</p>
+                    
+                    :
+                    <input 
+                        type="email"
+                        name="email"
+                        value={newCustomer.email}
+                        placeholder="Enter email"
+                        onChange={handleChange}
+                    />}
 
-                <select 
-                    onChange={handleDiscountCategoryChange}
-                    name="Discount Category"
-                    value={newCustomer.discountCategory}
-                >
-                    {/* <option value="select-category"> Select a Category </option> */}
-                    {discountOptions}
-                </select>
+                    <select 
+                        onChange={handleDiscountCategoryChange}
+                        name="Discount Category"
+                        value={newCustomer.discountCategory}
+                    >
+                        {/* <option value="select-category"> Select a Category </option> */}
+                        {discountOptions}
+                    </select>
 
-                <button type="submit">{loggedInCustomer ? "Update" : "Sign Up"}</button>
+                    <button type="submit">{loggedInCustomer ? "Update" : "Sign Up"}</button>
 
-                <p>{error}</p>    
+                  <p>{error}</p>  
+                </div>  
             </form>
           
         </>
