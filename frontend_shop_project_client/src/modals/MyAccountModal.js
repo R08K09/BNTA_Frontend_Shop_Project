@@ -54,10 +54,12 @@ const MyAccountModal = ({loggedInCustomer, listOfCustomers, setListOfCustomers, 
                         open={openUpdateAccountModal}
                         onClose={handleToggleUpdateAccountModal}>
                         <Box className="modal">
+                        <button className="x-button" onClick={handleToggleUpdateAccountModal}>X</button>
                             <SignUpForm setOpenSignUpModal={setOpenUpdateAccountModal} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} loggedInCustomer={loggedInCustomer}/>
                         </Box>
                     </Modal>
                     <button className="confirm-button" onClick={handleLogOut}>Log Out</button>
+                
                         <DeactivateAccountModal listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers} loggedInCustomer={loggedInCustomer} setLoggedInUserId={setLoggedInUserId} handleToggleMyAccountModal={handleToggleMyAccountModal} />
                 </div> 
            </Box>

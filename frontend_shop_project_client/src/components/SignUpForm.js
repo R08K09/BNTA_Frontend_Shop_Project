@@ -200,6 +200,7 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
 
                     <button type="submit">{loggedInCustomer ? "Update" : "Sign Up"}</button>
 
+
                   <p>{error}</p>  
                 </div>  
             </form>
