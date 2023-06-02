@@ -17,32 +17,6 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
 
     const [error, setError] = useState("");
 
-    // const handleValidationNewUser = () => {
-    //     let errorMessage = "";
-    //     if (listOfCustomers.find((customer) => customer.email === newCustomer.email)) {
-    //         errorMessage = "This email is already in use";
-    //     } if (newCustomer.email === "" || newCustomer.name === "") {
-    //         errorMessage = "Please complete all fields";
-    //         
-    //     } 
-    //     setError(errorMessage);
-    //     // return errorMessage;
-    // }
-
-    // const handleValidationUpdateUser = () => {
-    //     let errorMessage = "";
-    //     if (newCustomer.name === "") {
-    //         errorMessage = "Please enter name";
-    //     }
-    //     setError(errorMessage);
-    //     // return errorMessage;
-    // }
-
-    // const handleValidation = () => {
-    //      {loggedInCustomer ? handleValidationUpdateUser() : handleValidationNewUser()}
-    // }
-
-
     const discountCategories = [
         {
             id: 0,
@@ -163,7 +137,7 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
         setListOfCustomers(updatedCustomerList);
         
     })
-}
+    }
 
     return ( 
         <>

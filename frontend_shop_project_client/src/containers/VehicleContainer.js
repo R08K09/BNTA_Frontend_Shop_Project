@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import HeroSlideshow from "../components/HeroSlideshow";
-import VehicleForm from "../components/VehicleForm";
+// import VehicleForm from "../components/VehicleForm";
 import VehicleList from "../components/VehicleList";
 import { sliderImages } from "../sliderImages";
 import VehicleSlider from "../components/VehicleSlider";
@@ -45,8 +45,6 @@ const VehicleContainer = ({listOfCustomers, setLoggedInUserId, setListOfCustomer
             setLoggedInUserId ={setLoggedInUserId}
             loggedInUserId={loggedInUserId}/>
             <HeroSlideshow slides={sliderImages}/>
-            {/* <VehicleForm setMaxPrice={setMaxPrice} sliderValue={sliderValue}
-            maxVehiclePrice={maxVehiclePrice} maxPrice={maxPrice}/> */}
             <VehicleSlider sliderValue={sliderValue} setSliderValue={setSliderValue}  filterMaxPrice={filterMaxPrice}/>
             <hr/>
             <VehicleList listOfVehicles={listOfVehicles} vehicleSearch={vehicleSearch} filterMaxPrice={filterMaxPrice} loggedInUserId={loggedInUserId} listOfCustomers={listOfCustomers} setListOfCustomers={setListOfCustomers}/>
