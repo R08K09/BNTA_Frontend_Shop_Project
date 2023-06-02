@@ -142,7 +142,10 @@ const SignUpForm = ({setOpenSignUpModal, setListOfCustomers, listOfCustomers, lo
     return ( 
         <>
             <form className="sign-up-form" onSubmit={handleFormSubmit} >
-                <h2 id="enter-your-details-heading">Please enter your updated details below:</h2>
+                {loggedInCustomer ? 
+                <h2 id="enter-your-details-heading">Please enter your updated details below:</h2> 
+                : <h2 id="enter-your-details-heading">Please enter your details below:</h2>}
+                
                 <div className="signup-update-form">
                     <input 
                         type="text"

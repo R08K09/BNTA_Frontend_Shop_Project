@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import HeroSlideshow from "../components/HeroSlideshow";
-// import VehicleForm from "../components/VehicleForm";
 import VehicleList from "../components/VehicleList";
 import { sliderImages } from "../sliderImages";
 import VehicleSlider from "../components/VehicleSlider";
