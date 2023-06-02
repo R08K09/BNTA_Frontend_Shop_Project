@@ -60,6 +60,7 @@ If we had additional time, we would have liked to add the following features to 
 * Attach some functionality to the Newsletter sign-up form in the footer
 * Implement Order numbers to purchases made as well as stock numbers that should change in value upon completion of purchases.
 * Separate the CSS editing for each modal so that the size of each could be adjusted according to the information in them. At the moment they are all large and the same size. Also can figure out how to blur the background behind the modals.
+* Adding media responsiveness for use on different sized screens
 
 
 ## Collaborators
